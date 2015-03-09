@@ -1,0 +1,24 @@
+Stage 1 - Designing the frontend:
+  ☐ Choose a front-end framework!!!
+  ☐ Create front-end templates
+    ☐ index: all posts/main
+    ☐ user: all posts by user
+    ☐ post: individual post
+    ☐ tag: all posts by tag
+Stage 1.1 - Wire up the backend:
+  ☐ Wire up mongoose
+  ☐ Create back-end routes
+    ☐ "/": Get all posts
+    ☐ "/:userid": Get all posts by a user
+    ☐ "/tag/:tagname": Get all posts by tag
+Stage 1.2 - Fill up the backend:
+  ☐ Seed database
+    ☐ Create seedfile
+      ☐ Blogs?
+      ☐ Users
+      ☐ Posts
+    ☐ Actually seed it
+Stage 1.3 - Sanity check:
+ ☐ Check to see if it's working
+    ☐ BONUS: write mocha tests
+ ☐ Start readme.MD

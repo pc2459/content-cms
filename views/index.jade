@@ -1,4 +1,14 @@
 extends layout
 
 block content
-	h1 Hello Boulder!
+  .nav 
+    h5.nav-title Content
+    a(href="/") All posts
+
+  .container
+    if posts
+      for post in posts
+        .div.post-item
+          h2 #{post.title}
+          p.post-preview #{post.body}
+        hr
