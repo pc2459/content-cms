@@ -1,23 +1,33 @@
 Stage 1 - Designing the frontend:
   ☐ Choose a front-end framework!!!
+    ✔ Wireframe out in Skeleton @done (15-03-09 16:23)
+    ☐ Design templates in Pure, Bootstrap
   ☐ Create front-end templates
-    ☐ index: all posts/main
-    ☐ user: all posts by user
+    ✔ index: all posts/main @done (15-03-09 16:29)
+    ✔ user: all posts by user @done (15-03-09 17:35)
     ☐ post: individual post
     ☐ tag: all posts by tag
 Stage 1.1 - Wire up the backend:
   ☐ Wire up mongoose
+    ✔ NPM install @done (15-03-09 16:35)
+    ✔ Model Blog @done (15-03-09 16:44)
+      ☐ If we're only ever going to have one blog, is this the most efficient/best practice way of storing settings?
+    ✔ Model User @done (15-03-09 16:44)
+      ☐ Should we store posts in the user?
+    ✔ Model Posts @done (15-03-09 16:44)
+      ☐ Should tags be of tag schema or just a String?
+    ☐ Model Tags?
   ☐ Create back-end routes
-    ☐ "/": Get all posts
-    ☐ "/:userid": Get all posts by a user
+    ✔ "/": Get all posts @done (15-03-09 17:15)
+    ✔ "/:userid": Get all posts by a user @done (15-03-09 17:35)
     ☐ "/tag/:tagname": Get all posts by tag
 Stage 1.2 - Fill up the backend:
-  ☐ Seed database
-    ☐ Create seedfile
-      ☐ Blogs?
-      ☐ Users
-      ☐ Posts
-    ☐ Actually seed it
+  ✔ Seed database @done (15-03-09 17:07)
+    ✔ Create seedfile @done (15-03-09 17:07)
+      ✔ Blogs? @done (15-03-09 16:50)
+      ✔ Users @done (15-03-09 16:50)
+    ✔ Actually seed it @done (15-03-09 17:07)
+    ✔ Seed posts to the single user @done (15-03-09 17:07)
 Stage 1.3 - Sanity check:
  ☐ Check to see if it's working
     ☐ BONUS: write mocha tests

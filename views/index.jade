@@ -1,14 +1,15 @@
 extends layout
 
 block content
-  .nav 
-    h5.nav-title Content
-    a(href="/") All posts
 
-  .container
+  .container.main
     if posts
       for post in posts
         .div.post-item
-          h2 #{post.title}
+          h3.post-title 
+            a(href="/#{post._id}") #{post.title}
+          p.post-byline 
+            | Written by 
+            a(href="/#{post.owner}") #{post.ownerName}
           p.post-preview #{post.body}
         hr
