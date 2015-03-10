@@ -23,6 +23,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.get('/', readController.index);
 app.get('/:userid', readController.getByUser);
 app.get('/posts/:postid', readController.getSinglePost);
+app.get('/tags/:tag', readController.getByTag);
 
 
 var server = app.listen(9434, function() {

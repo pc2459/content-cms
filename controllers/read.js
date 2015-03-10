@@ -39,7 +39,15 @@ var readController = {
         post : post
       });
     });
+  },
 
+  getByTag: function(req, res){
+    var tag = req.params.tag;
+
+    Posts.find({ tags : tag}, function(err, posts){
+      res.render('index', 
+        {posts : posts});
+    })
   }
 
 };

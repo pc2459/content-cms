@@ -14,6 +14,6 @@ block content
               a(href="/#{post.owner}") #{post.ownerName}
             span.post-tags
               each tag in post.tags
-                a(class="button-tag button button-primary" href="/tag/#{tag}") #{tag}
+                a(class="button-tag button button-primary" href="/tags/#{tag}") #{tag}
           p.post-preview #{post.body}
         hr
