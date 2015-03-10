@@ -27,6 +27,18 @@ var readController = {
             user  : user});
       });
     });
+  },
+
+  getSinglePost: function(req, res){
+
+    var postid = req.params.postid;
+
+    // Get post by ID
+    Posts.findById(postid, function(err, post){
+      res.render('post', {
+        post : post
+      });
+    });
 
   }
 

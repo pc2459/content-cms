@@ -21,7 +21,9 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 // Set up routes --- reading
 app.get('/', readController.index);
-app.get('/:userid', readController.getByUser)
+app.get('/:userid', readController.getByUser);
+app.get('/posts/:postid', readController.getSinglePost);
+
 
 var server = app.listen(9434, function() {
 	console.log('Express server listening on port ' + server.address().port);

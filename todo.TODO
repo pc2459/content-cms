@@ -5,10 +5,10 @@ Stage 1 - Designing the frontend:
   ☐ Create front-end templates
     ✔ index: all posts/main @done (15-03-09 16:29)
     ✔ user: all posts by user @done (15-03-09 17:35)
-    ☐ post: individual post
+    ✔ post: individual post @done (15-03-09 17:44)
     ☐ tag: all posts by tag
 Stage 1.1 - Wire up the backend:
-  ☐ Wire up mongoose
+  ✔ Wire up mongoose @done (15-03-09 17:39)
     ✔ NPM install @done (15-03-09 16:35)
     ✔ Model Blog @done (15-03-09 16:44)
       ☐ If we're only ever going to have one blog, is this the most efficient/best practice way of storing settings?
@@ -20,6 +20,7 @@ Stage 1.1 - Wire up the backend:
   ☐ Create back-end routes
     ✔ "/": Get all posts @done (15-03-09 17:15)
     ✔ "/:userid": Get all posts by a user @done (15-03-09 17:35)
+    ✔ "/posts/:postid": Get single post @done (15-03-09 17:44)
     ☐ "/tag/:tagname": Get all posts by tag
 Stage 1.2 - Fill up the backend:
   ✔ Seed database @done (15-03-09 17:07)
