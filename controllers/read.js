@@ -2,8 +2,7 @@ var Posts = require('../models/post.js');
 var Users = require('../models/user.js');
 
 var readController = {
-  index: function(req, res) {
-
+  getAllPosts: function(req, res) {
     // Get all posts
     Posts.find({}, function(err, results){
       if (err) console.log(err);
@@ -13,7 +12,6 @@ var readController = {
   },
 
   getByUser: function(req, res){
-
     var userid = req.params.userid;
     // Get all posts by userid
     Posts.find({owner:userid}, function(err, posts){
@@ -30,7 +28,6 @@ var readController = {
   },
 
   getSinglePost: function(req, res){
-
     var postid = req.params.postid;
 
     // Get post by ID
@@ -47,7 +44,7 @@ var readController = {
     Posts.find({ tags : tag}, function(err, posts){
       res.render('index', 
         {posts : posts});
-    })
+    });
   }
 
 };

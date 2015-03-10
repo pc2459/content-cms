@@ -2,26 +2,26 @@ Stage 1 - Designing the frontend:
   ☐ Choose a front-end framework!!!
     ✔ Wireframe out in Skeleton @done (15-03-09 16:23)
     ☐ Design templates in Pure, Bootstrap
-  ☐ Create front-end templates
+  ✔ Create front-end templates @done (15-03-10 10:14)
     ✔ index: all posts/main @done (15-03-09 16:29)
     ✔ user: all posts by user @done (15-03-09 17:35)
     ✔ post: individual post @done (15-03-09 17:44)
-    ☐ tag: all posts by tag
+    ✔ tag: all posts by tag @done (15-03-10 09:04)
 Stage 1.1 - Wire up the backend:
   ✔ Wire up mongoose @done (15-03-09 17:39)
     ✔ NPM install @done (15-03-09 16:35)
     ✔ Model Blog @done (15-03-09 16:44)
       ☐ If we're only ever going to have one blog, is this the most efficient/best practice way of storing settings?
     ✔ Model User @done (15-03-09 16:44)
-      ☐ Should we store posts in the user?
     ✔ Model Posts @done (15-03-09 16:44)
+      ☐ Add lastEdited: Date 
       ☐ Should tags be of tag schema or just a String?
     ☐ Model Tags?
-  ☐ Create back-end routes
+  ✔ Create back-end routes @done (15-03-10 09:04)
     ✔ "/": Get all posts @done (15-03-09 17:15)
     ✔ "/:userid": Get all posts by a user @done (15-03-09 17:35)
     ✔ "/posts/:postid": Get single post @done (15-03-09 17:44)
-    ☐ "/tag/:tagname": Get all posts by tag
+    ✔ "/tag/:tagname": Get all posts by tag @done (15-03-10 09:04)
 Stage 1.2 - Fill up the backend:
   ✔ Seed database @done (15-03-09 17:07)
     ✔ Create seedfile @done (15-03-09 17:07)
@@ -30,6 +30,16 @@ Stage 1.2 - Fill up the backend:
     ✔ Actually seed it @done (15-03-09 17:07)
     ✔ Seed posts to the single user @done (15-03-09 17:07)
 Stage 1.3 - Sanity check:
- ☐ Check to see if it's working
+ ✔ Check to see if it's working @done (15-03-10 10:14)
     ☐ BONUS: write mocha tests
  ☐ Start readme.MD
+Stage 2 - Figuring out Passport:
+ ✔ Watch Passport video @done (15-03-10 12:15)
+ ☐ Create login page
+ ☐ Create a signup page
+ ☐ Wire up login page to Passport
+   ☐ Local authentication
+   ☐ Facebook authentication
+Stage 2.1 - Scaffold Out Administration:
+ ☐ Plan out administration UI/flow
+ ☐ Figure out how to get avatars 

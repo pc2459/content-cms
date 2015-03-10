@@ -20,7 +20,7 @@ app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({extended: false}));
 
 // Set up routes --- reading
-app.get('/', readController.index);
+app.get('/', readController.getAllPosts);
 app.get('/:userid', readController.getByUser);
 app.get('/posts/:postid', readController.getSinglePost);
 app.get('/tags/:tag', readController.getByTag);
@@ -29,3 +29,5 @@ app.get('/tags/:tag', readController.getByTag);
 var server = app.listen(9434, function() {
 	console.log('Express server listening on port ' + server.address().port);
 });
+
+module.exports = app;

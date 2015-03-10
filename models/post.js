@@ -1,7 +1,8 @@
 var mongoose = require('mongoose');
 
 var postSchema = mongoose.Schema({
-  timestamp: {type: Date, default: Date.now},
+  createdAt: {type: Date, default: Date.now},
+  editedAt: {type: Date, default: Date.now},
   title: String,
   body: String,
   owner: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
