@@ -44,12 +44,13 @@ app.get('/users/:userid', readController.getByUser);
 app.get('/posts/:postid', readController.getSinglePost);
 app.get('/tags/:tag', readController.getByTag);
 
-// Set up routes --- registration
+// Set up routes --- registration/authentication
 app.get('/signup', authController.signupForm);
 app.post('/signup', passport.authenticate('localSignUp', {
   successRedirect: '/testsignedin',
   failureRedirect: '/signup'
 }));
+app.get('/signin', authController.signIn);
 app.get('/testsignedin', authController.getSignedIn);
 
 

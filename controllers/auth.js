@@ -5,11 +5,17 @@ var authController = {
   signupForm: function(req, res) {
     res.render('signup');
   },
+
   getSignedIn: function(req, res){
     res.render('testsignedin', {
       user: req.user
     });
+  },
+  
+  signIn: function(req, res){
+    res.render('signin');
   }
+
 
 };
 

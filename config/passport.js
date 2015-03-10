@@ -35,6 +35,7 @@ var localSignUp = new LocalStrategy({
         var newUser = new User();
         
         newUser.generateHash(password, function(err, hash){
+
           newUser.local.password = hash;
           newUser.local.username = username;
           newUser.email = req.body.email;
@@ -44,14 +45,15 @@ var localSignUp = new LocalStrategy({
             if (err) throw err;
             return next(null, newUser);
           });
-        });
-        
+        });  
       }
-
 
     });
   }
 );
+
+// LOCAL LOGIN 
+
 
 passport.use('localSignUp', localSignUp);
 
