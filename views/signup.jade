@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  .container.main
+    .sign-up-form
+      form(id="sign-up", method="POST", action="/signup")
+        .row
+          .six.columns
+            label(for="username") Username:
+            input.u-full-width(type="text", name="username", placeholder="Username...")
+          .six.columns
+            label(for="password") Password:
+            input.u-full-width(type="password", name='password', placeholder="Password...")
+        .row
+          label(for="email") Email:
+          input.u-full-width(type="text", name="email", placeholder="Email...")
+        input.button-primary(type="submit", value="Sign Up")

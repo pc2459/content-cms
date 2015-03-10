@@ -36,7 +36,9 @@ Stage 1.3 - Sanity check:
 Stage 2 - Figuring out Passport:
  ✔ Watch Passport video @done (15-03-10 12:15)
  ☐ Create login page
- ☐ Create a signup page
+ ✔ Create a signup page @done (15-03-10 13:57)
+ ☐ Wire up signup page
+   ☐ Check if user has been successfully populated
  ☐ Wire up login page to Passport
    ☐ Local authentication
    ☐ Facebook authentication

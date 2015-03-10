@@ -11,7 +11,7 @@ block content
           p 
             span.post-byline 
               | Written by 
-              a(href="/#{post.owner}") #{post.ownerName}
+              a(href="/users/#{post.owner}") #{post.ownerName}
             span.post-tags
               each tag in post.tags
                 a(class="button-tag button button-primary" href="/tags/#{tag}") #{tag}

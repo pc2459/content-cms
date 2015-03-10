@@ -3,10 +3,14 @@ a {
   text-decoration: none;
 }
 
+html, body, .main { 
+  height: 100%;
+}
 /* Container override */
 .container {
   max-width: 100%;
 }
+
 
 /* Navigation */
 
@@ -24,6 +28,7 @@ a {
 
 .nav a {
   text-transform: uppercase;
+  padding: 0 1rem;
 }
 
 .nav-title {
@@ -52,4 +57,13 @@ a {
   line-height: 24px;
   padding: 0 15px;
   margin: 0 0.5rem;
+}
+
+.sign-up-form {
+  position: absolute;
+  margin-top: -7rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
 }

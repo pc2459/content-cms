@@ -1,8 +1,17 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var readController = require('./controllers/read.js');
+var authController = require('./controllers/auth.js');
 var _ = require('underscore');
 
+// Passport
+var passport = require('passport');
+var passportConfig = require('./config/passport.js');
+var session = require('express-session');
+
+
+// Database =============================================
+ 
 // Database connection
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/content');
@@ -19,11 +28,29 @@ app.set('views', __dirname + '/views');
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({extended: false}));
 
+// Sessions ============================================
+
+app.use(session({
+  secret : 'bananasinpyjamas',
+  resave : false,
+  saveUninitialized : false
+ }));
+app.use(passport.initialize());
+app.use(passport.session());
+
 // Set up routes --- reading
 app.get('/', readController.getAllPosts);
-app.get('/:userid', readController.getByUser);
+app.get('/users/:userid', readController.getByUser);
 app.get('/posts/:postid', readController.getSinglePost);
 app.get('/tags/:tag', readController.getByTag);
+
+// Set up routes --- registration
+app.get('/signup', authController.signupForm);
+app.post('/signup', passport.authenticate('localSignUp', {
+  successRedirect: '/testsignedin',
+  failureRedirect: '/signup'
+}));
+app.get('/testsignedin', authController.getSignedIn);
 
 
 var server = app.listen(9434, function() {

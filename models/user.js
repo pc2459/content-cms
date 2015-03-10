@@ -5,20 +5,18 @@ var userSchema = mongoose.Schema({
   // 0 = admin, 1 = user
   permissions: {type: Number, default: 0},
   local: {
-    email: 
+    username: 
       { 
         type    : String,
         unique  : true
       },
-    password:
-      {
-        type    : String
-      }
+    password: String
   },
   facebook: {
     id    : String,
     email : String
   },
+  email     : String,
   name      : String,
   bio       : String,
   avatarUrl : String
@@ -48,10 +46,12 @@ var userSchema = mongoose.Schema({
 //   });
 // });
 
-userSchema.methods.generateHash = function(password){
+userSchema.methods.generateHash = function(password, cb){
   bcrypt.genSalt(10, function(err, salt){
+    if (err) console.log (err);
     bcrypt.hash(password, salt, function(err, hash){
-      return hash;
+      if (err) console.log (err);
+      return cb(err, hash);
     });
   });
 };
