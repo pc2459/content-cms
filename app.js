@@ -4,6 +4,10 @@ var readController = require('./controllers/read.js');
 var authController = require('./controllers/auth.js');
 var _ = require('underscore');
 
+// Dotenv to hide the good stuff
+var dotenv = require('dotenv');
+dotenv.load();
+
 // Passport
 var passport = require('passport');
 var passportConfig = require('./config/passport.js');
@@ -44,13 +48,34 @@ app.get('/users/:userid', readController.getByUser);
 app.get('/posts/:postid', readController.getSinglePost);
 app.get('/tags/:tag', readController.getByTag);
 
-// Set up routes --- registration/authentication
+// Set up routes --- local registration/authentication
 app.get('/signup', authController.signupForm);
 app.post('/signup', passport.authenticate('localSignUp', {
   successRedirect: '/testsignedin',
   failureRedirect: '/signup'
 }));
-app.get('/signin', authController.signIn);
+
+// Set up routes --- local signin
+app.get('/signin', authController.signInIndex);
+app.post('/signin', passport.authenticate('localSignIn', {
+  successRedirect: '/testsignedin',
+  failureRedirect: '/signin'
+}));
+
+// Set up routes --- Facebook authentication
+app.get('/auth/facebook', passport.authenticate('fbSignIn'));
+app.get('/auth/facebook/callback', passport.authenticate(
+  'fbSignIn', {
+    successRedirect: '/testsignedin',
+    failureRedirect: '/signin'
+}));
+
+// Set up routes --- log out
+
+app.get('/logout', authController.logout);
+
+// Signed-in only routes
+app.use(passportConfig.isLoggedIn);
 app.get('/testsignedin', authController.getSignedIn);
 
 

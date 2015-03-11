@@ -34,15 +34,19 @@ Stage 1.3 - Sanity check:
  ☐ Start readme.MD
 Stage 2 - Figuring out Passport:
  ✔ Watch Passport video @done (15-03-10 12:15)
- ☐ Create login page
+ ✔ Create login page @done (15-03-10 19:11)
  ✔ Create a signup page @done (15-03-10 13:57)
  ✔ Wire up signup page @done (15-03-10 15:41)
    ✔ Check if user has been successfully populated @done (15-03-10 15:41)
- ☐ Wire up login page to Passport
-   ☐ Local authentication
-   ☐ Facebook authentication
+ ✔ Wire up login page to Passport @done (15-03-10 20:11)
+   ✔ Local authentication @done (15-03-10 19:11)
+   ✔ Facebook authentication @done (15-03-10 20:11)
+     ✔ Create app in FB developers zone @done (15-03-10 20:11)
+     ✔ Write the signup/signin logic @done (15-03-10 20:11)
+ ✔ Sign-out logic @done (15-03-10 20:28)
  ☐ Flash messages to display login errors
 Stage 2.1 - Scaffold out administration:
+ ✔ RESTRICT ROUTES @done (15-03-10 19:10)
  ☐ Plan out administration UI/flow
  ☐ "/admin/posts" - list all posts available for editing
    ☐ Scaffold page
@@ -62,7 +66,6 @@ Stage 2.1 - Scaffold out administration:
    ☐ Functionality
      ☐ Update blog settings
 Stage 2.2 - Update frontend:
- ☐ RESTRICT ROUTES
  ☐ Navbar UI
    ☐ Add "Hello, <username>" to nav when logged in
    ☐ Add link to backend
@@ -79,9 +82,9 @@ Stage 3 - Improve the backend:
    ☐ Twitter
 Stage 4 - Wishlist:
  ☐ Posts: add images
-Needlist:
 Wishlist:
  ☐ Authentication: Twitter
+ ☐ Gulp build system
  ☐ Date settings
  ☐ Pagination settings
  ☐ Mass-actions for editing

@@ -13,7 +13,10 @@ html(lang='en')
     .nav 
       h5.inline-title Content
       a(href="/") All posts
-      a(href="/signin") Sign in
+      if !loggedIn
+        a(href="/signin") Sign in
+      else
+        a(href="/logout") Log out
       
     block content
     

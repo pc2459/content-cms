@@ -12,10 +12,14 @@ var authController = {
     });
   },
   
-  signIn: function(req, res){
+  signInIndex: function(req, res){
     res.render('signin');
-  }
+  },
 
+  logout: function(req, res){
+    req.logout();
+    res.redirect('/');
+  }
 
 };
 

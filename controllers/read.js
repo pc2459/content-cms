@@ -7,7 +7,9 @@ var readController = {
     Posts.find({}, function(err, results){
       if (err) console.log(err);
       // Send to template for rendering
-      res.render('index', {posts:results});
+      res.render('index', {
+        loggedIn : req.user,
+        posts:results});
     });   
   },
 
@@ -21,7 +23,8 @@ var readController = {
         
         // Send to template for rendering
         res.render('user', 
-          { posts : posts, 
+          { loggedIn : req.user,
+            posts : posts, 
             user  : user});
       });
     });
@@ -33,6 +36,7 @@ var readController = {
     // Get post by ID
     Posts.findById(postid, function(err, post){
       res.render('post', {
+        loggedIn : req.user,
         post : post
       });
     });
@@ -42,8 +46,9 @@ var readController = {
     var tag = req.params.tag;
 
     Posts.find({ tags : tag}, function(err, posts){
-      res.render('index', 
-        {posts : posts});
+      res.render('index', {
+          loggedIn : req.user,
+          posts : posts});
     });
   }
 
