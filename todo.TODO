@@ -1,7 +1,6 @@
 Stage 1 - Designing the frontend:
-  ☐ Choose a front-end framework!!!
+  ✔ Choose a front-end framework!!! @done (15-03-10 17:47)
     ✔ Wireframe out in Skeleton @done (15-03-09 16:23)
-    ☐ Design templates in Pure, Bootstrap
   ✔ Create front-end templates @done (15-03-10 10:14)
     ✔ index: all posts/main @done (15-03-09 16:29)
     ✔ user: all posts by user @done (15-03-09 17:35)
@@ -37,11 +36,54 @@ Stage 2 - Figuring out Passport:
  ✔ Watch Passport video @done (15-03-10 12:15)
  ☐ Create login page
  ✔ Create a signup page @done (15-03-10 13:57)
- ☐ Wire up signup page
-   ☐ Check if user has been successfully populated
+ ✔ Wire up signup page @done (15-03-10 15:41)
+   ✔ Check if user has been successfully populated @done (15-03-10 15:41)
  ☐ Wire up login page to Passport
    ☐ Local authentication
    ☐ Facebook authentication
-Stage 2.1 - Scaffold Out Administration:
+ ☐ Flash messages to display login errors
+Stage 2.1 - Scaffold out administration:
  ☐ Plan out administration UI/flow
- ☐ Figure out how to get avatars 
+ ☐ "/admin/posts" - list all posts available for editing
+   ☐ Scaffold page
+   ☐ Wire it up
+ ☐ "/admin/posts/:postid" - edit single post
+   ☐ UI
+     ☐ Editor: Markdown editor
+     ☐ Tags
+     ☐ State: published/draft
+   ☐ Functionality
+     ☐ Edit post
+     ☐ Delete post
+ ☐ "/admin/settings" - blog settings
+   ☐ UI
+     ☐ Basic info: blog name, blog subtitle
+     ☐ Themes
+   ☐ Functionality
+     ☐ Update blog settings
+Stage 2.2 - Update frontend:
+ ☐ RESTRICT ROUTES
+ ☐ Navbar UI
+   ☐ Add "Hello, <username>" to nav when logged in
+   ☐ Add link to backend
+   ☐ Posts: edit links for logged-in users
+Stage 3 - Improve the backend:
+ ☐ Settings: Themes
+    ☐ Design templates in Pure, Bootstrap
+ ☐ Editor: Live post preview
+ ☐ Editor: Tags typeahead
+ ☐ Views: pagination
+ ☐ Avatars
+   ☐ Default
+   ☐ Facebook
+   ☐ Twitter
+Stage 4 - Wishlist:
+ ☐ Posts: add images
+Needlist:
+Wishlist:
+ ☐ Authentication: Twitter
+ ☐ Date settings
+ ☐ Pagination settings
+ ☐ Mass-actions for editing
+   ☐ Mass-delete
+   ☐ Mass-publish/unpublish
