@@ -44,7 +44,10 @@ Stage 2 - Figuring out Passport:
      ✔ Create app in FB developers zone @done (15-03-10 20:11)
      ✔ Write the signup/signin logic @done (15-03-10 20:11)
  ✔ Sign-out logic @done (15-03-10 20:28)
- ☐ Flash messages to display login errors
+ ✔ Flash messages to display login errors @done (15-03-11 11:28)
+ ☐ Form validation
+   ☐ Sign-up: Show error if there is no password or email
+   ☐ Sign-in: Show error if no password is input
 Stage 2.1 - Scaffold out administration:
  ✔ RESTRICT ROUTES @done (15-03-10 19:10)
  ☐ Plan out administration UI/flow

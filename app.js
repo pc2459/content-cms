@@ -11,8 +11,10 @@ dotenv.load();
 // Passport
 var passport = require('passport');
 var passportConfig = require('./config/passport.js');
-var session = require('express-session');
 
+var session = require('express-session');
+var cookieParser = require('cookie-parser');
+var flash = require('connect-flash');
 
 // Database =============================================
  
@@ -34,6 +36,8 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 // Sessions ============================================
 
+app.use(cookieParser());
+app.use(flash());
 app.use(session({
   secret : 'bananasinpyjamas',
   resave : false,
@@ -52,14 +56,16 @@ app.get('/tags/:tag', readController.getByTag);
 app.get('/signup', authController.signupForm);
 app.post('/signup', passport.authenticate('localSignUp', {
   successRedirect: '/testsignedin',
-  failureRedirect: '/signup'
+  failureRedirect: '/signup',
+  failureFlash: true
 }));
 
 // Set up routes --- local signin
 app.get('/signin', authController.signInIndex);
 app.post('/signin', passport.authenticate('localSignIn', {
   successRedirect: '/testsignedin',
-  failureRedirect: '/signin'
+  failureRedirect: '/signin',
+  failureFlash: true
 }));
 
 // Set up routes --- Facebook authentication

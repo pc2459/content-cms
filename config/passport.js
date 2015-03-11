@@ -29,7 +29,7 @@ var localSignUp = new LocalStrategy({
 
       // If the user already exists, return false
       if (user){
-        return next(null, false);
+        return next(null, false, req.flash('signUpError', 'That username is taken.'));
       }
       // Otherwise, create a new user 
       else {
@@ -65,7 +65,7 @@ var localSignIn = new LocalStrategy({
 
       // If user is not found...
       if (!user){
-        return next(null, false);
+        return next(null, false, req.flash('loginError', 'No user found.'));
       }
 
       user.comparePassword(password, function(err, isMatch){
@@ -73,7 +73,7 @@ var localSignIn = new LocalStrategy({
 
         // Passwords don't match...
         if(!isMatch){
-          return next(null, false);
+          return next(null, false, req.flash('loginError', 'Wrong password.'));
         }
         // Passwords match... so return the user
         else {
@@ -104,8 +104,8 @@ var fbSignIn = new FacebookStrategy({
       }
       // Otherwise, create the user and store them
       else {
-        console.log(profile);
         var newUser = new User();
+
         newUser.facebook.id = profile.id;
         newUser.facebook.token = token,
         newUser.name = profile.name.givenName;
@@ -120,11 +120,8 @@ var fbSignIn = new FacebookStrategy({
           return next(null, newUser);
         });
       }
-      
     });
-
   }
-
 );
 
 // Make passport use these strategies

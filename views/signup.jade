@@ -2,7 +2,12 @@ extends layout
 
 block content
   .container.main
+ 
     .sign-up-form.both-centered
+      if (error.length > 0)
+        p.error 
+          span.fa.fa-warning
+          span  #{error}
       form(id="sign-up", method="POST", action="/signup")
         .row
           .six.columns
