@@ -2,6 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var readController = require('./controllers/read.js');
 var authController = require('./controllers/auth.js');
+var adminController = require('./controllers/admin.js');
 var _ = require('underscore');
 
 // Dotenv to hide the good stuff
@@ -46,6 +47,8 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+// Routes ==============================================
+
 // Set up routes --- reading
 app.get('/', readController.getAllPosts);
 app.get('/users/:userid', readController.getByUser);
@@ -63,7 +66,7 @@ app.post('/signup', passport.authenticate('localSignUp', {
 // Set up routes --- local signin
 app.get('/signin', authController.signInIndex);
 app.post('/signin', passport.authenticate('localSignIn', {
-  successRedirect: '/testsignedin',
+  successRedirect: '/admin',
   failureRedirect: '/signin',
   failureFlash: true
 }));
@@ -72,17 +75,23 @@ app.post('/signin', passport.authenticate('localSignIn', {
 app.get('/auth/facebook', passport.authenticate('fbSignIn'));
 app.get('/auth/facebook/callback', passport.authenticate(
   'fbSignIn', {
-    successRedirect: '/testsignedin',
+    successRedirect: '/admin',
     failureRedirect: '/signin'
 }));
 
 // Set up routes --- log out
-
 app.get('/logout', authController.logout);
 
 // Signed-in only routes
 app.use(passportConfig.isLoggedIn);
 app.get('/testsignedin', authController.getSignedIn);
+
+
+// Set up routes --- admin backend
+app.get('/admin', adminController.getAllPosts);
+// app.get('/admin/posts/create', adminController.createPost);
+app.get('/admin/posts/:postid', adminController.editPost);
+// app.get('/admin/settings', adminController.editSettings);
 
 
 var server = app.listen(9434, function() {

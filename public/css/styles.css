@@ -24,6 +24,10 @@ html, body, .main {
   border: 0;
 }
 
+.muted {
+  color: #CCCCCC;
+}
+
 .text-center {
   text-align: center;
 }
@@ -98,4 +102,38 @@ html, body, .main {
   padding: 6px 10px;
   border-radius: 4px;
   border: 1px solid #DA898E;
+}
+
+/* ADMIN */
+
+.admin {
+  background-color: #1C1C1C;
+  color: #DADADA;
+}
+
+.admin a {
+  color: #DADADA;
+}
+
+/* EDITOR */
+
+#viewpane {
+  width: 100%;
+  height: 100%;
+}
+
+.post-body {
+  height: 100%;
+}
+
+#post-title{
+  height: 5%;
+}
+
+#post-text{
+ height: 70%;
+}
+
+.post-options {
+  height: 5%;
 }

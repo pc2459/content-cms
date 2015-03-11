@@ -3,17 +3,14 @@ extends layout
 block content
 
   .container.main
+    p.muted All Posts
     if posts
       for post in posts
         .div.post-item
-          h3.post-title 
-            a(href="/posts/#{post._id}") #{post.title}
+          h5.post-title 
+            a(href="admin/posts/#{post._id}") #{post.title}
           p 
-            span.post-byline 
-              | Written by 
-              a(href="/users/#{post.owner}") #{post.ownerName}
             span.post-tags
               each tag in post.tags
                 a(class="button-tag button button-primary" href="/tags/#{tag}") #{tag}
-          p.post-preview !{post.body}
         hr

@@ -1,0 +1,23 @@
+extends layout
+
+block content
+
+  .container.main
+
+    a.edit-link(href="#") Edit
+    a.preview-link(href="#") Preview
+
+    #editor
+      .post-body
+        input.u-full-width(type="text", id="post-title", value="#{post.title}")
+        textarea.u-full-width#post-text !{post.body}
+        .post-options
+          a.button(href='/save') Save
+          a.button(href='/admin') Cancel
+    #preview
+
+
+block page-scripts
+  script(type="application/javascript", src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js")
+  script(type="application/javascript", src="//cdnjs.cloudflare.com/ajax/libs/markdown.js/0.6.0-beta1/markdown.min.js")
+  script(type="application/javascript", src="/js/edit.js")

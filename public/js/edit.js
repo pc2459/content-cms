@@ -1,0 +1,6 @@
+$(document).on('ready', function(){
+
+  
+
+
+});

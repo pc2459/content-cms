@@ -50,13 +50,16 @@ Stage 2 - Figuring out Passport:
    ☐ Sign-in: Show error if no password is input
 Stage 2.1 - Scaffold out administration:
  ✔ RESTRICT ROUTES @done (15-03-10 19:10)
- ☐ Plan out administration UI/flow
- ☐ "/admin/posts" - list all posts available for editing
-   ☐ Scaffold page
-   ☐ Wire it up
+ ✔ Plan out administration UI/flow @done (15-03-11 11:36)
+ ☐ "/admin" - list all posts available for editing
+   ✔ Scaffold page @done (15-03-11 12:01)
+   ✔ Wire it up @done (15-03-11 12:01)
+   ☐ Preview pane?
  ☐ "/admin/posts/:postid" - edit single post
    ☐ UI
-     ☐ Editor: Markdown editor
+     ☐ Editor: Markdown Editor
+       ☐ Convert markdown to HTML
+       ☐ Save HTML string to the server
      ☐ Tags
      ☐ State: published/draft
    ☐ Functionality
