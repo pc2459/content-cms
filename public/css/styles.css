@@ -28,6 +28,10 @@ html, body, .main {
   color: #CCCCCC;
 }
 
+.hidden {
+  display: none;
+}
+
 .text-center {
   text-align: center;
 }
@@ -117,7 +121,9 @@ html, body, .main {
 
 /* EDITOR */
 
-#viewpane {
+#editor,
+#preview,
+#edit-post {
   width: 100%;
   height: 100%;
 }
@@ -128,10 +134,12 @@ html, body, .main {
 
 #post-title{
   height: 5%;
+  font-size: 2rem;
 }
 
 #post-text{
  height: 70%;
+ border: 0;
 }
 
 .post-options {

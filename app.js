@@ -91,6 +91,7 @@ app.get('/testsignedin', authController.getSignedIn);
 app.get('/admin', adminController.getAllPosts);
 // app.get('/admin/posts/create', adminController.createPost);
 app.get('/admin/posts/:postid', adminController.editPost);
+app.post('/admin/posts/:postid', adminController.saveEditedPost);
 // app.get('/admin/settings', adminController.editSettings);
 
 

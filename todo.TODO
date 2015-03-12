@@ -54,11 +54,11 @@ Stage 2.1 - Scaffold out administration:
  ☐ "/admin" - list all posts available for editing
    ✔ Scaffold page @done (15-03-11 12:01)
    ✔ Wire it up @done (15-03-11 12:01)
-   ☐ Preview pane?
+   ✔ Preview pane on separate tab @done (15-03-11 18:42)
  ☐ "/admin/posts/:postid" - edit single post
    ☐ UI
      ☐ Editor: Markdown Editor
-       ☐ Convert markdown to HTML
+       ✔ Convert markdown to HTML @done (15-03-11 18:42)
        ☐ Save HTML string to the server
      ☐ Tags
      ☐ State: published/draft
@@ -96,3 +96,4 @@ Wishlist:
  ☐ Mass-actions for editing
    ☐ Mass-delete
    ☐ Mass-publish/unpublish
+ ☐ Autosave to localstorage
