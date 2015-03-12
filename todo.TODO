@@ -60,9 +60,9 @@ Stage 2.1 - Scaffold out administration:
      ✔ Editor: Markdown Editor @done (15-03-11 19:26)
        ✔ Convert markdown to HTML @done (15-03-11 18:42)
        ✔ Save HTML string to the server @done (15-03-11 19:19)
-     ☐ Tags
+     ✔ Tags @done (15-03-11 20:39)
      ☐ State: published/draft
-     ☐ Date edited
+     ✔ Date edited @done (15-03-11 20:42)
    ☐ Functionality
      ✔ Edit post @done (15-03-11 19:26)
      ☐ Delete post

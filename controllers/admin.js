@@ -36,11 +36,13 @@ var adminController = {
     var tags = req.body.tags.split(',');
 
     console.log("Tags:", tags);
+    console.log("Date:", Date.now())
 
     var update = {
       title : title,
       body : htmlBody,
-      tags : tags
+      tags : tags,
+      editedAt : Date.now()
 
       // Also change edit date...
       // Publish status...
