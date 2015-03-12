@@ -3,14 +3,22 @@ extends layout
 block content
 
   .container.main
-    p.muted All Posts
+    p.muted 
+      a.button(href="/admin/posts/create")
+        span.fa.fa-pencil
+        span  New Post
     if posts
       for post in posts
         .div.post-item
           h5.post-title 
             a(href="admin/posts/#{post._id}") #{post.title}
-          p 
-            span.post-tags
-              each tag in post.tags
-                a(class="button-tag button button-primary" href="/tags/#{tag}") #{tag}
+          .post-meta
+            p.u-pull-right.delete
+              a.button.button-tag(href="/admin/posts/delete/#{post._id}")
+                span.fa.fa-times  Delete 
+
+            p.post-tags 
+              span
+                each tag in post.tags
+                  a(class="button-tag button button-primary" href="/tags/#{tag}") #{tag}
         hr

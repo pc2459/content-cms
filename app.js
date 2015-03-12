@@ -89,7 +89,9 @@ app.get('/testsignedin', authController.getSignedIn);
 
 // Set up routes --- admin backend
 app.get('/admin', adminController.getAllPosts);
-// app.get('/admin/posts/create', adminController.createPost);
+app.get('/admin/posts/create', adminController.createPost);
+app.post('/admin/posts/create', adminController.saveNewPost);
+app.get('/admin/posts/delete/:postid', adminController.deletePost);
 app.get('/admin/posts/:postid', adminController.editPost);
 app.post('/admin/posts/:postid', adminController.saveEditedPost);
 // app.get('/admin/settings', adminController.editSettings);

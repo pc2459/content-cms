@@ -40,6 +40,7 @@ var localSignUp = new LocalStrategy({
           newUser.local.password = hash;
           newUser.local.username = username;
           newUser.email = req.body.email;
+          newUser.name = req.body.name;
 
           // Save the user
           newUser.save(function(err){

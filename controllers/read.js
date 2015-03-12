@@ -4,7 +4,7 @@ var Users = require('../models/user.js');
 var readController = {
   getAllPosts: function(req, res) {
     // Get all posts
-    Posts.find({}, function(err, results){
+    Posts.find({}, null, {sort: {createdAt : -1}}, function(err, results){
       if (err) console.log(err);
       // Send to template for rendering
       res.render('index', {

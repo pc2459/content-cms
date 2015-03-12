@@ -1,19 +1,20 @@
 $(document).on('ready', function(){
 
   $('#tags').tagsInput({
-    'height' : '48px',
+    'height' : '40px',
     'width' : '100%',
     'defaultText' : ''
   });
 
-
-  console.log("All the tags:", tags);
 
   var $editor = $('#editor');
   var $preview = $('#preview');
 
   // Switch to preview
   $('.preview-link').on('click', function(){
+
+    $('.edit-link').removeClass('tab-style-active');
+    $('.preview-link').addClass('tab-style-active');
 
     var postMarkdown = $('#post-text').val();
     // Hide the editor
@@ -32,6 +33,9 @@ $(document).on('ready', function(){
 
   // Switch back to Edit mode
   $('.edit-link').on('click', function(){
+
+    $('.edit-link').addClass('tab-style-active');
+    $('.preview-link').removeClass('tab-style-active');
     $preview.addClass('hidden');
     $editor.removeClass('hidden');
   });

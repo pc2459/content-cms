@@ -55,6 +55,7 @@ Stage 2.1 - Scaffold out administration:
    ✔ Scaffold page @done (15-03-11 12:01)
    ✔ Wire it up @done (15-03-11 12:01)
    ✔ Preview pane on separate tab @done (15-03-11 18:42)
+   ✔ List posts in last-edited order @done (15-03-12 10:02)
  ☐ "/admin/posts/:postid" - edit single post
    ☐ UI
      ✔ Editor: Markdown Editor @done (15-03-11 19:26)
@@ -66,7 +67,8 @@ Stage 2.1 - Scaffold out administration:
    ☐ Functionality
      ✔ Edit post @done (15-03-11 19:26)
      ☐ Delete post
-     ☐ Add post
+     ✔ Add post @done (15-03-12 10:02)
+ ☐ "/admin/profile" - profile settings
  ☐ "/admin/settings" - blog settings
    ☐ UI
      ☐ Basic info: blog name, blog subtitle
@@ -77,11 +79,10 @@ Stage 2.2 - Update frontend:
  ☐ Editor UI
    ☐ Light grey blackground
    ☐ Typography update: Courier
-   ☐ Improve the shitty switch back/forth
+   ☐ Improve the switch back/forth
  ☐ Typography update...
  ☐ Navbar UI
-   ☐ Add "Hello, <username>" to nav when logged in
-   ☐ Add link to backend
+   ✔ Add link to backend @done (15-03-12 10:26)
    ☐ Posts: edit links for logged-in users
 Stage 3 - Improve the backend:
  ☐ Settings: Themes
