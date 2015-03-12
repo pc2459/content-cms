@@ -56,19 +56,25 @@ Stage 2.1 - Scaffold out administration:
    ✔ Wire it up @done (15-03-11 12:01)
    ✔ Preview pane on separate tab @done (15-03-11 18:42)
    ✔ List posts in last-edited order @done (15-03-12 10:02)
- ☐ "/admin/posts/:postid" - edit single post
-   ☐ UI
+ ✔ "/admin/posts/:postid" - edit single post @done (15-03-12 11:45)
+   ✔ UI @done (15-03-12 11:45)
      ✔ Editor: Markdown Editor @done (15-03-11 19:26)
        ✔ Convert markdown to HTML @done (15-03-11 18:42)
        ✔ Save HTML string to the server @done (15-03-11 19:19)
      ✔ Tags @done (15-03-11 20:39)
-     ☐ State: published/draft
-     ✔ Date edited @done (15-03-11 20:42)
-   ☐ Functionality
+     ✔ State: published/draft @done (15-03-12 11:45)
+       ✔ Set post as published/draft @done (15-03-12 11:19)
+       ✔ Display indicator that post is a draft on /admin @done (15-03-12 11:45)
+       ✔ Don't show draft posts on main read page @done (15-03-12 11:45)
+     ✔ Date edited @done (15-03-12 10:42)
+   ✔ Functionality @done (15-03-12 10:42)
      ✔ Edit post @done (15-03-11 19:26)
-     ☐ Delete post
+     ✔ Delete post @done (15-03-12 10:42)
      ✔ Add post @done (15-03-12 10:02)
  ☐ "/admin/profile" - profile settings
+   ☐ Display basic info
+   ☐ Update basic info
+   ☐ Update password...
  ☐ "/admin/settings" - blog settings
    ☐ UI
      ☐ Basic info: blog name, blog subtitle

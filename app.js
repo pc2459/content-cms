@@ -94,6 +94,8 @@ app.post('/admin/posts/create', adminController.saveNewPost);
 app.get('/admin/posts/delete/:postid', adminController.deletePost);
 app.get('/admin/posts/:postid', adminController.editPost);
 app.post('/admin/posts/:postid', adminController.saveEditedPost);
+app.get('/admin/profile', adminController.getProfile);
+app.post('/admin/profile', adminController.saveProfile);
 // app.get('/admin/settings', adminController.editSettings);
 
 

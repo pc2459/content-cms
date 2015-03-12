@@ -94,8 +94,42 @@ var adminController = {
       // console.log(post);
       res.redirect('/admin');
     });
+  },
+
+  getProfile: function(req, res){
+
+    Users.findById(req.user._id, function(err, user){
+      res.render('admin/profile', {user:user});
+    });
+  },
+
+  saveProfile: function(req, res){
+
+    console.log(req.body);
+    var update = {
+      name : req.body.name,
+      email : req.body.email,
+      bio: req.body.bio
+    };
+
+    var userid = req.user._id;
+
+    Users.findByIdAndUpdate(userid, update, function(err, user){
+
+      console.log("Successfully updated:", user, err);
+
+      // Update posts to reflect new name 
+       
+      Posts.update({owner : userid}, {$set : {ownerName : req.body.name}},
+        {multi: true}, function(err, results){
+
+          res.redirect('/admin/profile');
+
+        });
+      
 
 
+    });
   }
 
 

@@ -124,6 +124,7 @@ html, body, .main {
 }
 
 .post-tags,
+.draft,
 .delete {
   margin: 0;
 }

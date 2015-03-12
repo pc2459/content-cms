@@ -17,8 +17,12 @@ block content
               a.button.button-tag(href="/admin/posts/delete/#{post._id}")
                 span.fa.fa-times  Delete 
 
-            p.post-tags 
-              span
-                each tag in post.tags
-                  a(class="button-tag button button-primary" href="/tags/#{tag}") #{tag}
+            if (!post.published)
+              p.u-pull-right.draft 
+                a.button.button-tag Draft
+
+            //- p.post-tags 
+            //-   span
+            //-     each tag in post.tags
+            //-       a(class="button-tag button button-primary" href="/tags/#{tag}") #{tag}
         hr

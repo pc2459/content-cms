@@ -1,0 +1,24 @@
+extends layout
+
+block content
+
+  .container.main
+
+    form(id="form-profile", method="POST", action="/admin/profile")
+      .row
+        .six.columns
+          label(for="name") Name
+          input.u-full-width(type="text", name="name", value="#{user.name}")
+      .row
+        .six.columns
+          label(for="email") Email
+          input.u-full-width(type="text", name="email", value="#{user.email}")
+      .row
+        .six.columns
+          label(for="bio") Bio
+          textarea.u-full-width(name="bio") #{user.bio}
+      .row
+        input(type="submit", value="Save")
+
+        
+
