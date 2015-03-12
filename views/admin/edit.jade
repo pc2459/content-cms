@@ -1,5 +1,8 @@
 extends layout
 
+block header-scripts
+  link(rel="stylesheet", type="text/css", href="https://cdnjs.cloudflare.com/ajax/libs/jquery-tagsinput/1.3.3/jquery.tagsinput.css")
+
 block content
 
   .container.main
@@ -12,12 +15,19 @@ block content
         form(id="edit-post", method="POST", action="/admin/posts/#{post._id}")
           input.u-full-width(type="text", id="post-title", name="posttitle", value="#{post.title}")
           textarea.u-full-width#post-text(name="posttext") !{post.body}
-          //- .post-options
+          input(name="tags", id="tags", value=post.tags)
           input(type="submit", value="Save")
-    #preview.hidden
+      #preview.hidden
+      h3#preview-title
+      #preview-body   
 
+          //- .post-tags
+            //- for tag in post.tags
+            //-   a.button.button-primary.button-tag #{tag}
+          //- a.button#save(href="#", data-id="#{post._id}") Save
 
 block page-scripts
   script(type="application/javascript", src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js")
   script(type="application/javascript", src="/js/markdown.min.js")
+  script(type="application/javascript", src="//cdnjs.cloudflare.com/ajax/libs/jquery-tagsinput/1.3.3/jquery.tagsinput.min.js")
   script(type="application/javascript", src="/js/edit.js")

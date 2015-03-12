@@ -1,12 +1,18 @@
 $(document).on('ready', function(){
 
-  var updatePreview = function(inputEl){
+  $('#tags').tagsInput({
+    'height' : '48px',
+    'width' : '100%',
+    'defaultText' : ''
+  });
 
-  };
+
+  console.log("All the tags:", tags);
 
   var $editor = $('#editor');
   var $preview = $('#preview');
 
+  // Switch to preview
   $('.preview-link').on('click', function(){
 
     var postMarkdown = $('#post-text').val();
@@ -17,15 +23,42 @@ $(document).on('ready', function(){
     var postHTML = markdown.toHTML(postMarkdown);
 
     // Update the preview with the HTML
-    $preview.html(postHTML);
+    $('#preview-title').html($('#post-title').val());
+    $('#preview-body').html(postHTML);
 
     // Show the preview
     $preview.removeClass('hidden');
   });
 
+  // Switch back to Edit mode
   $('.edit-link').on('click', function(){
     $preview.addClass('hidden');
     $editor.removeClass('hidden');
   });
+
+
+
+  // Ajax POST on save
+  $('#save').on('click', function(e){
+    e.preventDefault();
+    var tags = $('#tags').val().split(',');
+    // tags = tags.split(',');
+    console.log("THE TAGS:", tags);
+
+    var data = {
+      posttitle : $('#post-title').val(),
+      posttext : $('#post-text').val(),
+      // postid : $(this).attr('data-id'),
+      tags : tags
+    };
+
+    $.post('/admin/posts/'+$(this).attr('data-id'),
+          data
+    );
+
+  });
+
+
+
 
 });

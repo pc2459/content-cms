@@ -33,10 +33,14 @@ var adminController = {
     var title = req.body.posttitle;
     var markdownBody = req.body.posttext;
     var htmlBody = marked(markdownBody);
+    var tags = req.body.tags.split(',');
+
+    console.log("Tags:", tags);
 
     var update = {
       title : title,
-      body : htmlBody
+      body : htmlBody,
+      tags : tags
 
       // Also change edit date...
       // Publish status...
@@ -44,8 +48,7 @@ var adminController = {
 
     Posts.findByIdAndUpdate(postid, update, function(err, post){
       console.log("Successfully updated post?");
-      console.log(post);
-
+      // console.log(post);
       res.redirect('/admin');
     });
 
