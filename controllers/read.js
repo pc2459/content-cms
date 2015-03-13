@@ -1,5 +1,6 @@
 var Posts = require('../models/post.js');
 var Users = require('../models/user.js');
+var moment = require('moment');
 
 var readController = {
   getAllPosts: function(req, res) {
@@ -15,13 +16,15 @@ var readController = {
             res.render('../themes/'+ user.theme +'/index', {
               loggedIn : req.user,
               posts:posts,
-              pageCount : pageCount});
+              pageCount : pageCount,
+              moment : moment});
           });
         }
         else {
           res.render('../themes/default/index', { 
             posts: posts,
-            pageCount : pageCount });
+            pageCount : pageCount,
+            moment : moment });
         }  
 
 

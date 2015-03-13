@@ -24,6 +24,7 @@ Stage 2.2 - Update frontend:
 Stage 3 - Improve the backend:
  ✔ Post previews - shorten @done (15-03-13 14:29)
  ☐ Settings: Themes
+    ☐ Dynamically generate themes list in settings page
     ☐ Design templates in Pure, Bootstrap
  ☐ Editor: Tags typeahead
  ☐ Admin post lists: pagination
