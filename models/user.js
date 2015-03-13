@@ -15,7 +15,8 @@ var userSchema = mongoose.Schema({
   email     : String,
   name      : String,
   bio       : String,
-  avatarUrl : String
+  avatarUrl : String,
+  theme     : {type: String, default: 'default'}
 });
 
 

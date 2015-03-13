@@ -18,6 +18,12 @@ block content
           label(for="bio") Bio
           textarea.u-full-width(name="bio") #{user.bio}
       .row
+        .six.columns
+          label(for="theme") Reading Theme
+          select(name="theme")
+            option(value="default", selected=(user.theme === 'default')) Default
+            option(value="themeA",  selected=(user.theme === 'themeA')) ThemeA
+      .row
         input(type="submit", value="Save")
 
     hr

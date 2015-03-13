@@ -1,0 +1,24 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset="utf-8")
+    link(rel="stylesheet", type="text/css", href="http://fonts.googleapis.com/css?family=Raleway:600,400,300")
+    link(rel="stylesheet", type="text/css", href="http://fonts.googleapis.com/css?family=Merriweather:400italic,400,700,700italic")
+    link(rel="stylesheet", href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css")
+    //- link(rel="stylesheet", type="text/css", href="/css/normalize.css")
+    //- link(rel="stylesheet", type="text/css", href="/css/skeleton.css")
+    link(rel="stylesheet", type="text/css", href="/themeA/css/styles.css")
+    title Content
+
+  body
+    .nav 
+      h3.inline-title Content
+      a(href="/") All posts
+      if !loggedIn
+        a(href="/signin") Sign in
+      else
+        a(href="/admin")  Admin
+        a(href="/logout") Log out
+      
+    block content
+    

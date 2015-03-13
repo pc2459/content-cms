@@ -112,7 +112,8 @@ var adminController = {
     var update = {
       name : req.body.name,
       email : req.body.email,
-      bio: req.body.bio
+      bio: req.body.bio,
+      theme: req.body.theme
     };
 
     var userid = req.user._id;

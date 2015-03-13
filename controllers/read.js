@@ -6,10 +6,18 @@ var readController = {
     // Get all posts
     Posts.find({published : true}, null, {sort: {createdAt : -1}}, function(err, results){
       if (err) console.log(err);
-      // Send to template for rendering
-      res.render('index', {
-        loggedIn : req.user,
-        posts:results});
+
+      if(req.user){      
+        Users.findById(req.user._id, function(err, user){
+          // Send to template for rendering
+          res.render('../themes/'+ user.theme +'/index', {
+            loggedIn : req.user,
+            posts:results});
+        });
+      }
+      else {
+        res.render('../themes/default/index', { posts: results });
+      }
     });   
   },
 
@@ -20,12 +28,22 @@ var readController = {
 
       // Get the user's info
       Users.findById(userid, function(err, user){
-        
-        // Send to template for rendering
-        res.render('user', 
-          { loggedIn : req.user,
-            posts : posts, 
-            user  : user});
+
+        // Render the page in the user's theme
+        if(req.user){
+          Users.findById(req.user._id, function(err, user){
+            // Send to template for rendering
+            res.render('../themes/'+ user.theme +'/user', {
+              loggedIn : req.user,
+              posts: posts});
+          });
+        }
+        // If not logged in, render in the default theme
+        else{
+          res.render('../themes/default/user', { 
+              posts : posts, 
+              user  : user});          
+        }
       });
     });
   },
@@ -35,10 +53,22 @@ var readController = {
 
     // Get post by ID
     Posts.findById(postid, function(err, post){
-      res.render('post', {
-        loggedIn : req.user,
-        post : post
-      });
+
+      // Render the page in the user's theme
+      if(req.user){
+        Users.findById(req.user._id, function(err, user){
+          // Send to template for rendering
+          res.render('../themes/'+ user.theme +'/post', {
+            loggedIn : req.user,
+            post: post});
+        });
+      }
+      // If not logged in, render in the default theme
+      else{
+        res.render('../themes/default/post', {
+          post : post
+        });         
+      }
     });
   },
 
@@ -46,8 +76,15 @@ var readController = {
     var tag = req.params.tag;
 
     Posts.find({ tags : tag}, function(err, posts){
-      res.render('index', {
-          loggedIn : req.user,
+
+      if(req.user){
+        Users.findById(req.user._id, function(err, user){
+          res.render('../themes/'+ user.theme +'/index', {
+              loggedIn : req.user,
+              posts : posts});
+        });
+      }
+      res.render('../themes/default/index', {
           posts : posts});
     });
   }

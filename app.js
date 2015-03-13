@@ -33,6 +33,8 @@ var app = express();
 app.set('view engine', 'jade');
 app.set('views', __dirname + '/views');
 app.use(express.static(__dirname + '/public'));
+// Statically serve themes folder
+app.use(express.static(__dirname + '/themes'));
 app.use(bodyParser.urlencoded({extended: false}));
 
 // Sessions ============================================
@@ -58,7 +60,7 @@ app.get('/tags/:tag', readController.getByTag);
 // Set up routes --- local registration/authentication
 app.get('/signup', authController.signupForm);
 app.post('/signup', passport.authenticate('localSignUp', {
-  successRedirect: '/testsignedin',
+  successRedirect: '/admin',
   failureRedirect: '/signup',
   failureFlash: true
 }));

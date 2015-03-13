@@ -1,80 +1,17 @@
 Stage 1 - Designing the frontend:
-  ✔ Choose a front-end framework!!! @done (15-03-10 17:47)
-    ✔ Wireframe out in Skeleton @done (15-03-09 16:23)
-  ✔ Create front-end templates @done (15-03-10 10:14)
-    ✔ index: all posts/main @done (15-03-09 16:29)
-    ✔ user: all posts by user @done (15-03-09 17:35)
-    ✔ post: individual post @done (15-03-09 17:44)
-    ✔ tag: all posts by tag @done (15-03-10 09:04)
 Stage 1.1 - Wire up the backend:
-  ✔ Wire up mongoose @done (15-03-09 17:39)
-    ✔ NPM install @done (15-03-09 16:35)
-    ✔ Model Blog @done (15-03-09 16:44)
-      ☐ If we're only ever going to have one blog, is this the most efficient/best practice way of storing settings?
-    ✔ Model User @done (15-03-09 16:44)
-    ✔ Model Posts @done (15-03-09 16:44)
-      ✔ Add lastEdited: Date  @done (15-03-12 16:53)
+      ✔ If we're only ever going to have one blog, is this the most efficient/best practice way of storing settings? @done (15-03-13 09:32)
       ☐ Should tags be of tag schema or just a String?
     ☐ Model Tags?
-  ✔ Create back-end routes @done (15-03-10 09:04)
-    ✔ "/": Get all posts @done (15-03-09 17:15)
-    ✔ "/:userid": Get all posts by a user @done (15-03-09 17:35)
-    ✔ "/posts/:postid": Get single post @done (15-03-09 17:44)
-    ✔ "/tag/:tagname": Get all posts by tag @done (15-03-10 09:04)
 Stage 1.2 - Fill up the backend:
-  ✔ Seed database @done (15-03-09 17:07)
-    ✔ Create seedfile @done (15-03-09 17:07)
-      ✔ Blogs? @done (15-03-09 16:50)
-      ✔ Users @done (15-03-09 16:50)
-    ✔ Actually seed it @done (15-03-09 17:07)
-    ✔ Seed posts to the single user @done (15-03-09 17:07)
 Stage 1.3 - Sanity check:
- ✔ Check to see if it's working @done (15-03-10 10:14)
     ☐ BONUS: write mocha tests
  ☐ Start readme.MD
 Stage 2 - Figuring out Passport:
- ✔ Watch Passport video @done (15-03-10 12:15)
- ✔ Create login page @done (15-03-10 19:11)
- ✔ Create a signup page @done (15-03-10 13:57)
- ✔ Wire up signup page @done (15-03-10 15:41)
-   ✔ Check if user has been successfully populated @done (15-03-10 15:41)
- ✔ Wire up login page to Passport @done (15-03-10 20:11)
-   ✔ Local authentication @done (15-03-10 19:11)
-   ✔ Facebook authentication @done (15-03-10 20:11)
-     ✔ Create app in FB developers zone @done (15-03-10 20:11)
-     ✔ Write the signup/signin logic @done (15-03-10 20:11)
- ✔ Sign-out logic @done (15-03-10 20:28)
- ✔ Flash messages to display login errors @done (15-03-11 11:28)
  ☐ Form validation
    ☐ Sign-up: Show error if there is no password or email
    ☐ Sign-in: Show error if no password is input
 Stage 2.1 - Scaffold out administration:
- ✔ RESTRICT ROUTES @done (15-03-10 19:10)
- ✔ Plan out administration UI/flow @done (15-03-11 11:36)
- ✔ "/admin" - list all posts available for editing @done (15-03-11 19:19)
-   ✔ Scaffold page @done (15-03-11 12:01)
-   ✔ Wire it up @done (15-03-11 12:01)
-   ✔ Preview pane on separate tab @done (15-03-11 18:42)
-   ✔ List posts in last-edited order @done (15-03-12 10:02)
- ✔ "/admin/posts/:postid" - edit single post @done (15-03-12 11:45)
-   ✔ UI @done (15-03-12 11:45)
-     ✔ Editor: Markdown Editor @done (15-03-11 19:26)
-       ✔ Convert markdown to HTML @done (15-03-11 18:42)
-       ✔ Save HTML string to the server @done (15-03-11 19:19)
-     ✔ Tags @done (15-03-11 20:39)
-     ✔ State: published/draft @done (15-03-12 11:45)
-       ✔ Set post as published/draft @done (15-03-12 11:19)
-       ✔ Display indicator that post is a draft on /admin @done (15-03-12 11:45)
-       ✔ Don't show draft posts on main read page @done (15-03-12 11:45)
-     ✔ Date edited @done (15-03-12 10:42)
-   ✔ Functionality @done (15-03-12 10:42)
-     ✔ Edit post @done (15-03-11 19:26)
-     ✔ Delete post @done (15-03-12 10:42)
-     ✔ Add post @done (15-03-12 10:02)
- ✔ "/admin/profile" - profile settings @done (15-03-12 17:23)
-   ✔ Display basic info @done (15-03-12 16:52)
-   ✔ Update basic info @done (15-03-12 16:52)
-   ✔ Update password... @done (15-03-12 17:23)
  ☐ "/admin/settings" - blog settings
    ☐ UI
      ☐ Basic info: blog name, blog subtitle
@@ -88,7 +25,6 @@ Stage 2.2 - Update frontend:
    ☐ Improve the switch back/forth
  ☐ Typography update...
  ☐ Navbar UI
-   ✔ Add link to backend @done (15-03-12 10:26)
  ☐ Reading UI
    ☐ Posts: edit links for logged-in users
    ☐ Posts: timestamps
@@ -96,13 +32,11 @@ Stage 3 - Improve the backend:
  ☐ Post previews - shorten
  ☐ Settings: Themes
     ☐ Design templates in Pure, Bootstrap
- ✔ Editor: Live post preview @done (15-03-12 17:33)
  ☐ Editor: Tags typeahead
  ☐ Views: pagination
  ☐ Avatars
    ☐ Default
    ☐ Facebook
-   ☐ Twitter
 Stage 4 - UI improvement:
  ☐ Ajaxify Save/Publish
 Stage n - Wishlist:
@@ -116,3 +50,71 @@ Wishlist:
    ☐ Mass-delete
    ☐ Mass-publish/unpublish
  ☐ Autosave to localstorage
+
+＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
+Archive:
+ ✔ Editor: Live post preview @done (15-03-12 17:33) @project(Stage 3 - Improve the backend)
+ ✔ Update password... @done (15-03-12 17:23) @project(Stage 2.1 - Scaffold out administration)
+ ✔ "/admin/profile" - profile settings @done (15-03-12 17:23) @project(Stage 2.1 - Scaffold out administration)
+ ✔ Add lastEdited: Date  @done (15-03-12 16:53) @project(Stage 1.1 - Wire up the backend)
+ ✔ Update basic info @done (15-03-12 16:52) @project(Stage 2.1 - Scaffold out administration)
+ ✔ Display basic info @done (15-03-12 16:52) @project(Stage 2.1 - Scaffold out administration)
+ ✔ UI @done (15-03-12 11:45) @project(Stage 2.1 - Scaffold out administration)
+ ✔ State: published/draft @done (15-03-12 11:45) @project(Stage 2.1 - Scaffold out administration)
+ ✔ Don't show draft posts on main read page @done (15-03-12 11:45) @project(Stage 2.1 - Scaffold out administration)
+ ✔ Display indicator that post is a draft on /admin @done (15-03-12 11:45) @project(Stage 2.1 - Scaffold out administration)
+ ✔ "/admin/posts/:postid" - edit single post @done (15-03-12 11:45) @project(Stage 2.1 - Scaffold out administration)
+ ✔ Set post as published/draft @done (15-03-12 11:19) @project(Stage 2.1 - Scaffold out administration)
+ ✔ Functionality @done (15-03-12 10:42) @project(Stage 2.1 - Scaffold out administration)
+ ✔ Delete post @done (15-03-12 10:42) @project(Stage 2.1 - Scaffold out administration)
+ ✔ Date edited @done (15-03-12 10:42) @project(Stage 2.1 - Scaffold out administration)
+ ✔ Add link to backend @done (15-03-12 10:26) @project(Stage 2.2 - Update frontend)
+ ✔ List posts in last-edited order @done (15-03-12 10:02) @project(Stage 2.1 - Scaffold out administration)
+ ✔ Add post @done (15-03-12 10:02) @project(Stage 2.1 - Scaffold out administration)
+ ✔ Tags @done (15-03-11 20:39) @project(Stage 2.1 - Scaffold out administration)
+ ✔ Editor: Markdown Editor @done (15-03-11 19:26) @project(Stage 2.1 - Scaffold out administration)
+ ✔ Edit post @done (15-03-11 19:26) @project(Stage 2.1 - Scaffold out administration)
+ ✔ Save HTML string to the server @done (15-03-11 19:19) @project(Stage 2.1 - Scaffold out administration)
+ ✔ "/admin" - list all posts available for editing @done (15-03-11 19:19) @project(Stage 2.1 - Scaffold out administration)
+ ✔ Preview pane on separate tab @done (15-03-11 18:42) @project(Stage 2.1 - Scaffold out administration)
+ ✔ Convert markdown to HTML @done (15-03-11 18:42) @project(Stage 2.1 - Scaffold out administration)
+ ✔ Wire it up @done (15-03-11 12:01) @project(Stage 2.1 - Scaffold out administration)
+ ✔ Scaffold page @done (15-03-11 12:01) @project(Stage 2.1 - Scaffold out administration)
+ ✔ Plan out administration UI/flow @done (15-03-11 11:36) @project(Stage 2.1 - Scaffold out administration)
+ ✔ Flash messages to display login errors @done (15-03-11 11:28) @project(Stage 2 - Figuring out Passport)
+ ✔ Sign-out logic @done (15-03-10 20:28) @project(Stage 2 - Figuring out Passport)
+ ✔ Write the signup/signin logic @done (15-03-10 20:11) @project(Stage 2 - Figuring out Passport)
+ ✔ Wire up login page to Passport @done (15-03-10 20:11) @project(Stage 2 - Figuring out Passport)
+ ✔ Facebook authentication @done (15-03-10 20:11) @project(Stage 2 - Figuring out Passport)
+ ✔ Create app in FB developers zone @done (15-03-10 20:11) @project(Stage 2 - Figuring out Passport)
+ ✔ Local authentication @done (15-03-10 19:11) @project(Stage 2 - Figuring out Passport)
+ ✔ Create login page @done (15-03-10 19:11) @project(Stage 2 - Figuring out Passport)
+ ✔ RESTRICT ROUTES @done (15-03-10 19:10) @project(Stage 2.1 - Scaffold out administration)
+ ✔ Choose a front-end framework!!! @done (15-03-10 17:47) @project(Stage 1 - Designing the frontend)
+ ✔ Wire up signup page @done (15-03-10 15:41) @project(Stage 2 - Figuring out Passport)
+ ✔ Check if user has been successfully populated @done (15-03-10 15:41) @project(Stage 2 - Figuring out Passport)
+ ✔ Create a signup page @done (15-03-10 13:57) @project(Stage 2 - Figuring out Passport)
+ ✔ Watch Passport video @done (15-03-10 12:15) @project(Stage 2 - Figuring out Passport)
+ ✔ Create front-end templates @done (15-03-10 10:14) @project(Stage 1 - Designing the frontend)
+ ✔ Check to see if it's working @done (15-03-10 10:14) @project(Stage 1.3 - Sanity check)
+ ✔ tag: all posts by tag @done (15-03-10 09:04) @project(Stage 1 - Designing the frontend)
+ ✔ Create back-end routes @done (15-03-10 09:04) @project(Stage 1.1 - Wire up the backend)
+ ✔ "/tag/:tagname": Get all posts by tag @done (15-03-10 09:04) @project(Stage 1.1 - Wire up the backend)
+ ✔ post: individual post @done (15-03-09 17:44) @project(Stage 1 - Designing the frontend)
+ ✔ "/posts/:postid": Get single post @done (15-03-09 17:44) @project(Stage 1.1 - Wire up the backend)
+ ✔ Wire up mongoose @done (15-03-09 17:39) @project(Stage 1.1 - Wire up the backend)
+ ✔ user: all posts by user @done (15-03-09 17:35) @project(Stage 1 - Designing the frontend)
+ ✔ "/:userid": Get all posts by a user @done (15-03-09 17:35) @project(Stage 1.1 - Wire up the backend)
+ ✔ "/": Get all posts @done (15-03-09 17:15) @project(Stage 1.1 - Wire up the backend)
+ ✔ Seed posts to the single user @done (15-03-09 17:07) @project(Stage 1.2 - Fill up the backend)
+ ✔ Seed database @done (15-03-09 17:07) @project(Stage 1.2 - Fill up the backend)
+ ✔ Create seedfile @done (15-03-09 17:07) @project(Stage 1.2 - Fill up the backend)
+ ✔ Actually seed it @done (15-03-09 17:07) @project(Stage 1.2 - Fill up the backend)
+ ✔ Users @done (15-03-09 16:50) @project(Stage 1.2 - Fill up the backend)
+ ✔ Blogs? @done (15-03-09 16:50) @project(Stage 1.2 - Fill up the backend)
+ ✔ Model User @done (15-03-09 16:44) @project(Stage 1.1 - Wire up the backend)
+ ✔ Model Posts @done (15-03-09 16:44) @project(Stage 1.1 - Wire up the backend)
+ ✔ Model Blog @done (15-03-09 16:44) @project(Stage 1.1 - Wire up the backend)
+ ✔ NPM install @done (15-03-09 16:35) @project(Stage 1.1 - Wire up the backend)
+ ✔ index: all posts/main @done (15-03-09 16:29) @project(Stage 1 - Designing the frontend)
+ ✔ Wireframe out in Skeleton @done (15-03-09 16:23) @project(Stage 1 - Designing the frontend)
