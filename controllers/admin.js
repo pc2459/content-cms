@@ -99,13 +99,16 @@ var adminController = {
   getProfile: function(req, res){
 
     Users.findById(req.user._id, function(err, user){
-      res.render('admin/profile', {user:user});
+      res.render('admin/profile', { 
+        user:user,
+        error:req.flash('changePWError'),
+        success:req.flash('changePWMsg')
+      });
     });
   },
 
   saveProfile: function(req, res){
 
-    console.log(req.body);
     var update = {
       name : req.body.name,
       email : req.body.email,
@@ -116,20 +119,49 @@ var adminController = {
 
     Users.findByIdAndUpdate(userid, update, function(err, user){
 
-      console.log("Successfully updated:", user, err);
-
       // Update posts to reflect new name 
-       
       Posts.update({owner : userid}, {$set : {ownerName : req.body.name}},
         {multi: true}, function(err, results){
-
           res.redirect('/admin/profile');
-
         });
-      
-
-
     });
+  },
+
+  changePW: function(req, res){
+
+    var oldpw = req.body.oldpw;
+    // Twice-verified new password
+    var newpw = req.body.newpw;
+    var newpw2 = req.body.newpw2;
+
+    Users.findById({_id: req.user._id}, function(err, user){
+
+      // Compare the old password
+      user.comparePassword(oldpw, function(err, isMatch){
+        if (err) return err;
+        // Old password doesn't match
+        if(!isMatch){
+          req.flash('changePWError', 'Incorrect password');
+          res.redirect('/admin/profile');
+        }
+
+        else {
+          // New passwords don't match
+          if(newpw !== newpw2){
+            req.flash('changePWError', 'New passwords do not match.');
+            res.redirect('/admin/profile');
+          }
+          else{
+            // Success
+            req.flash('changePWMsg', 'Successfully changed password');
+            res.redirect('/admin/profile');
+          }
+        }
+      });
+    });
+  
+
+
   }
 
 

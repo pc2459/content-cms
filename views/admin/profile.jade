@@ -20,5 +20,30 @@ block content
       .row
         input(type="submit", value="Save")
 
+    hr
+
+    form(id="form-password", method="POST", action="/admin/changepw")
+      if (error.length > 0)
+        p.error 
+          span.fa.fa-warning
+          span  #{error}
+      if (success.length > 0)
+        p.success
+          span.fa.fa-check 
+          span #{success}    
+      .row
+        .six.columns
+          label(for="oldpw") Old password
+          input.u-full-width(type="password", name="oldpw")
+      .row
+        .six.columns
+          label(for="newpw") New Password
+          input.u-full-width(type="password", name="newpw")
+      .row
+        .six.columns
+          label(for="newpw") Confirm New Password
+          input.u-full-width(type="password", name="newpw2")
+      .row
+        input(type="submit", value="Change Password")
         
 

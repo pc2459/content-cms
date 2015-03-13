@@ -13,7 +13,7 @@ Stage 1.1 - Wire up the backend:
       ☐ If we're only ever going to have one blog, is this the most efficient/best practice way of storing settings?
     ✔ Model User @done (15-03-09 16:44)
     ✔ Model Posts @done (15-03-09 16:44)
-      ☐ Add lastEdited: Date 
+      ✔ Add lastEdited: Date  @done (15-03-12 16:53)
       ☐ Should tags be of tag schema or just a String?
     ☐ Model Tags?
   ✔ Create back-end routes @done (15-03-10 09:04)
@@ -71,10 +71,10 @@ Stage 2.1 - Scaffold out administration:
      ✔ Edit post @done (15-03-11 19:26)
      ✔ Delete post @done (15-03-12 10:42)
      ✔ Add post @done (15-03-12 10:02)
- ☐ "/admin/profile" - profile settings
-   ☐ Display basic info
-   ☐ Update basic info
-   ☐ Update password...
+ ✔ "/admin/profile" - profile settings @done (15-03-12 17:23)
+   ✔ Display basic info @done (15-03-12 16:52)
+   ✔ Update basic info @done (15-03-12 16:52)
+   ✔ Update password... @done (15-03-12 17:23)
  ☐ "/admin/settings" - blog settings
    ☐ UI
      ☐ Basic info: blog name, blog subtitle
@@ -82,18 +82,21 @@ Stage 2.1 - Scaffold out administration:
    ☐ Functionality
      ☐ Update blog settings
 Stage 2.2 - Update frontend:
- ☐ Editor UI
+ ☐ Editor Design
    ☐ Light grey blackground
    ☐ Typography update: Courier
    ☐ Improve the switch back/forth
  ☐ Typography update...
  ☐ Navbar UI
    ✔ Add link to backend @done (15-03-12 10:26)
+ ☐ Reading UI
    ☐ Posts: edit links for logged-in users
+   ☐ Posts: timestamps
 Stage 3 - Improve the backend:
+ ☐ Post previews - shorten
  ☐ Settings: Themes
     ☐ Design templates in Pure, Bootstrap
- ☐ Editor: Live post preview
+ ✔ Editor: Live post preview @done (15-03-12 17:33)
  ☐ Editor: Tags typeahead
  ☐ Views: pagination
  ☐ Avatars

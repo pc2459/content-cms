@@ -96,6 +96,7 @@ app.get('/admin/posts/:postid', adminController.editPost);
 app.post('/admin/posts/:postid', adminController.saveEditedPost);
 app.get('/admin/profile', adminController.getProfile);
 app.post('/admin/profile', adminController.saveProfile);
+app.post('/admin/changepw', adminController.changePW);
 // app.get('/admin/settings', adminController.editSettings);
 
 
