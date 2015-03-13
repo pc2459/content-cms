@@ -6,14 +6,53 @@ var htmlmd = require('html-md');
 var adminController = {
   getAllPosts: function(req, res) {
 
+
+
     // Display all posts by the user
     Users.findById(req.user._id, function(err, user){
+      Posts.paginate({owner: user._id}, req.query.page, req.query.limit, 
+        function(err, pageCount, posts, itemCount){
 
-      Posts.find({'owner': user._id}, null, {sort:{editedAt: -1}}, function(err, posts){
-        res.render('admin/admin', {posts:posts});
-      });
+          if (err) return next(err);
+
+          res.render('admin/admin', {
+            posts:posts,
+            pageCount: pageCount
+          });
+          
+          // if(req.user){      
+          //   Users.findById(req.user._id, function(err, user){
+          //     // Send to template for rendering
+          //     res.render('../themes/'+ user.theme +'/index', {
+          //       loggedIn : req.user,
+          //       posts:posts,
+          //       pageCount : pageCount});
+          //   });
+          // }
+          // else {
+          //   res.render('../themes/default/index', { 
+          //     posts: posts,
+          //     pageCount : pageCount });
+          // }  
+
+
+        }, {sortBy : {createdAt : -1}});
+
+      ///////
+
+      // Posts.find({'owner': user._id}, null, {sort:{editedAt: -1}}, function(err, posts){
+      //   res.render('admin/admin', {posts:posts});
+      // });
 
     });
+
+    // // Display all posts by the user
+    // Users.findById(req.user._id, function(err, user){
+
+    //   Posts.find({'owner': user._id}, null, {sort:{editedAt: -1}}, function(err, posts){
+    //     res.render('admin/admin', {posts:posts});
+    //   });
+    // });
   },
 
   createPost: function(req, res){
@@ -43,8 +82,10 @@ var adminController = {
         published : published
       });
 
-      newPost.save();
-      res.redirect('/admin');
+      newPost.save(function(){
+        res.redirect('/admin');
+      });
+      
 
     });
   },

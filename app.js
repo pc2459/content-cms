@@ -92,7 +92,9 @@ app.get('/logout', authController.logout);
 
 // Signed-in only routes
 app.use(passportConfig.isLoggedIn);
-app.get('/testsignedin', authController.getSignedIn);
+
+// Try an if statement
+// app.use(paginate.middleware(10,20));
 
 
 // Set up routes --- admin backend

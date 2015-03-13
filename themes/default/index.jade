@@ -8,14 +8,17 @@ block content
         .div.post-item
           h3.post-title 
             a(href="/posts/#{post._id}") #{post.title}
-          p 
-            span.post-byline 
+          p.post-byline  
+            span.post-by
               | Written by 
-              a(href="/users/#{post.owner}") #{post.ownerName}
+              a(href="/users/#{post.owner}") #{post.ownerName} 
+            span.post-time.fa.fa-clock-o 
+            span  #{post.editedAt}
             span.post-tags
               each tag in post.tags
                 a(class="button-tag button button-primary" href="/tags/#{tag}") #{tag}
-          p.post-preview !{post.body}
+          p.post-preview !{post.body.substr(0, 255) + '...'}
+            a(href="/posts/#{post._id}")  Read more
         hr
     if paginate.hasPreviousPages || paginate.hasNextPages(pageCount)
       if paginate.hasPreviousPages

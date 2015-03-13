@@ -26,3 +26,9 @@ block content
             //-     each tag in post.tags
             //-       a(class="button-tag button button-primary" href="/tags/#{tag}") #{tag}
         hr
+
+    if paginate.hasPreviousPages || paginate.hasNextPages(pageCount)
+      if paginate.hasPreviousPages
+        a.button(href=paginate.href(true)) Previous
+      if paginate.hasNextPages(pageCount)
+        a.button(href=paginate.href()) Next

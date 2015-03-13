@@ -1,6 +1,5 @@
 Stage 1 - Designing the frontend:
 Stage 1.1 - Wire up the backend:
-      ✔ If we're only ever going to have one blog, is this the most efficient/best practice way of storing settings? @done (15-03-13 09:32)
       ☐ Should tags be of tag schema or just a String?
     ☐ Model Tags?
 Stage 1.2 - Fill up the backend:
@@ -12,12 +11,6 @@ Stage 2 - Figuring out Passport:
    ☐ Sign-up: Show error if there is no password or email
    ☐ Sign-in: Show error if no password is input
 Stage 2.1 - Scaffold out administration:
- ☐ "/admin/settings" - blog settings
-   ☐ UI
-     ☐ Basic info: blog name, blog subtitle
-     ☐ Themes
-   ☐ Functionality
-     ☐ Update blog settings
 Stage 2.2 - Update frontend:
  ☐ Editor Design
    ☐ Light grey blackground
@@ -29,11 +22,11 @@ Stage 2.2 - Update frontend:
    ☐ Posts: edit links for logged-in users
    ☐ Posts: timestamps
 Stage 3 - Improve the backend:
- ☐ Post previews - shorten
+ ✔ Post previews - shorten @done (15-03-13 14:29)
  ☐ Settings: Themes
     ☐ Design templates in Pure, Bootstrap
  ☐ Editor: Tags typeahead
- ☐ Views: pagination
+ ☐ Admin post lists: pagination
  ☐ Avatars
    ☐ Default
    ☐ Facebook
@@ -42,6 +35,7 @@ Stage 4 - UI improvement:
 Stage n - Wishlist:
  ☐ Posts: add images
 Wishlist:
+ ☐ Tests - https://github.com/RefactorU/hackathon-live-feed/blob/master/server/app.js
  ☐ Authentication: Twitter
  ☐ Gulp build system
  ☐ Date settings
@@ -53,6 +47,15 @@ Wishlist:
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ If we're only ever going to have one blog, is this the most efficient/best practice way of storing settings? @done (15-03-13 09:32) @project(Stage 1.1 - Wire up the backend)
+ ✔ "/admin/settings" - blog settings @done (15-03-13 12:32) @project(Stage 2.1 - Scaffold out administration)
+ ✔ UI @done (15-03-13 12:32) @project(Stage 2.1 - Scaffold out administration)
+ ✘ Basic info: blog name, blog subtitle @cancelled (15-03-13 12:31) @project(Stage 2.1 - Scaffold out administration)
+ ✔ Themes @done (15-03-13 10:50) @project(Stage 2.1 - Scaffold out administration)
+ ✘ Functionality @cancelled (15-03-13 12:32) @project(Stage 2.1 - Scaffold out administration)
+ ✘ Update blog settings @cancelled (15-03-13 12:32) @project(Stage 2.1 - Scaffold out administration)
+ ✔ Views: pagination @done (15-03-13 11:51) @project(Stage 3 - Improve the backend)
+ ✘ Twitter @cancelled (15-03-13 09:39) @project(Stage 3 - Improve the backend)
  ✔ Editor: Live post preview @done (15-03-12 17:33) @project(Stage 3 - Improve the backend)
  ✔ Update password... @done (15-03-12 17:23) @project(Stage 2.1 - Scaffold out administration)
  ✔ "/admin/profile" - profile settings @done (15-03-12 17:23) @project(Stage 2.1 - Scaffold out administration)

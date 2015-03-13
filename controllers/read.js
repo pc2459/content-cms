@@ -4,8 +4,6 @@ var Users = require('../models/user.js');
 var readController = {
   getAllPosts: function(req, res) {
 
-
-
     Posts.paginate({}, req.query.page, req.query.limit, 
       function(err, pageCount, posts, itemCount){
 
@@ -103,18 +101,42 @@ var readController = {
   getByTag: function(req, res){
     var tag = req.params.tag;
 
-    Posts.find({ tags : tag}, function(err, posts){
+    Posts.paginate({tags : tag}, req.query.page, req.query.limit, 
+      function(err, pageCount, posts, itemCount){
 
-      if(req.user){
-        Users.findById(req.user._id, function(err, user){
-          res.render('../themes/'+ user.theme +'/index', {
+        if (err) return next(err);
+        
+        if(req.user){      
+          Users.findById(req.user._id, function(err, user){
+            // Send to template for rendering
+            res.render('../themes/'+ user.theme +'/index', {
               loggedIn : req.user,
-              posts : posts});
-        });
-      }
-      res.render('../themes/default/index', {
-          posts : posts});
-    });
+              posts:posts,
+              pageCount : pageCount});
+          });
+        }
+        else {
+          res.render('../themes/default/index', { 
+            posts: posts,
+            pageCount : pageCount });
+        }  
+
+
+      }, {sortBy : {createdAt : -1}});
+
+
+    // Posts.find({ tags : tag}, function(err, posts){
+
+    //   if(req.user){
+    //     Users.findById(req.user._id, function(err, user){
+    //       res.render('../themes/'+ user.theme +'/index', {
+    //           loggedIn : req.user,
+    //           posts : posts});
+    //     });
+    //   }
+    //   res.render('../themes/default/index', {
+    //       posts : posts});
+    // });
   }
 
 };
