@@ -3,22 +3,50 @@ var Users = require('../models/user.js');
 
 var readController = {
   getAllPosts: function(req, res) {
-    // Get all posts
-    Posts.find({published : true}, null, {sort: {createdAt : -1}}, function(err, results){
-      if (err) console.log(err);
 
-      if(req.user){      
-        Users.findById(req.user._id, function(err, user){
-          // Send to template for rendering
-          res.render('../themes/'+ user.theme +'/index', {
-            loggedIn : req.user,
-            posts:results});
-        });
-      }
-      else {
-        res.render('../themes/default/index', { posts: results });
-      }
-    });   
+
+
+    Posts.paginate({}, req.query.page, req.query.limit, 
+      function(err, pageCount, posts, itemCount){
+
+        if (err) return next(err);
+        
+        if(req.user){      
+          Users.findById(req.user._id, function(err, user){
+            // Send to template for rendering
+            res.render('../themes/'+ user.theme +'/index', {
+              loggedIn : req.user,
+              posts:posts,
+              pageCount : pageCount});
+          });
+        }
+        else {
+          res.render('../themes/default/index', { 
+            posts: posts,
+            pageCount : pageCount });
+        }  
+
+
+      }, {sortBy : {createdAt : -1}});
+
+
+    // // Get all posts
+    // Posts.find({published : true}, null, {sort: {createdAt : -1}}, function(err, results){
+    //   if (err) console.log(err);
+
+    //   if(req.user){      
+    //     Users.findById(req.user._id, function(err, user){
+    //       // Send to template for rendering
+    //       res.render('../themes/'+ user.theme +'/index', {
+    //         loggedIn : req.user,
+    //         posts:results});
+    //     });
+    //   }
+    //   else {
+    //     res.render('../themes/default/index', { posts: results });
+    //   }
+    // });   
+
   },
 
   getByUser: function(req, res){

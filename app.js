@@ -1,4 +1,5 @@
 var express = require('express');
+var paginate = require('express-paginate');
 var bodyParser = require('body-parser');
 var readController = require('./controllers/read.js');
 var authController = require('./controllers/auth.js');
@@ -21,6 +22,7 @@ var flash = require('connect-flash');
  
 // Database connection
 var mongoose = require('mongoose');
+
 mongoose.connect('mongodb://localhost/content');
 
 // Seed database to set up Blog and one user 
@@ -48,6 +50,10 @@ app.use(session({
  }));
 app.use(passport.initialize());
 app.use(passport.session());
+
+// Pagination ==========================================
+
+app.use(paginate.middleware(5,10));
 
 // Routes ==============================================
 

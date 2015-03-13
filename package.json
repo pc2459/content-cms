@@ -18,6 +18,8 @@
     "passport-facebook": "^2.0.0",
     "passport-local": "~1.0.0",
     "supertest": "~0.15.0",
-    "underscore": "~1.8.2"
+    "underscore": "~1.8.2",
+    "express-paginate": "0.0.6",
+    "mongoose-paginate": "~3.1.3"
   }
 }
