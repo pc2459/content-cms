@@ -110,7 +110,7 @@ app.post('/admin/changepw', adminController.changePW);
 // app.get('/admin/settings', adminController.editSettings);
 
 
-var server = app.listen(9434, function() {
+var server = app.listen(process.env.PORT || 9434, function() {
 	console.log('Express server listening on port ' + server.address().port);
 });
 
