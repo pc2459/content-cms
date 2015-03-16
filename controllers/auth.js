@@ -4,7 +4,7 @@ var Users = require('../models/user.js');
 var authController = {
   signupForm: function(req, res) {
     // console.log(req.flash('signUpError'));
-    res.render('signup', { error: req.flash('signUpError') });
+    res.render('admin/signup', { error: req.flash('signUpError') });
   },
 
   getSignedIn: function(req, res){
@@ -14,7 +14,7 @@ var authController = {
   },
   
   signInIndex: function(req, res){
-    res.render('signin', { error: req.flash('loginError') });
+    res.render('admin/signin', { error: req.flash('loginError') });
   },
 
   logout: function(req, res){
