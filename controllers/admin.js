@@ -1,5 +1,7 @@
+var fs = require('fs');
 var Posts = require('../models/post.js');
 var Users = require('../models/user.js');
+var Image = require('../models/image.js')
 var marked = require('marked');
 var htmlmd = require('html-md');
 
@@ -37,22 +39,7 @@ var adminController = {
 
 
         }, {sortBy : {createdAt : -1}});
-
-      ///////
-
-      // Posts.find({'owner': user._id}, null, {sort:{editedAt: -1}}, function(err, posts){
-      //   res.render('admin/admin', {posts:posts});
-      // });
-
     });
-
-    // // Display all posts by the user
-    // Users.findById(req.user._id, function(err, user){
-
-    //   Posts.find({'owner': user._id}, null, {sort:{editedAt: -1}}, function(err, posts){
-    //     res.render('admin/admin', {posts:posts});
-    //   });
-    // });
   },
 
   createPost: function(req, res){
@@ -69,7 +56,7 @@ var adminController = {
     if(req.body.tags){
       tags = req.body.tags.split(',');
     }
-    var published = !!req.body.published;
+    var published = req.body.published;
 
     Users.findById(req.user._id, function(err, user){
 
@@ -137,6 +124,26 @@ var adminController = {
     });
   },
 
+  upload: function(req, res){
+
+
+    var mimetype = req.files.image.mimetype;
+    var path = req.files.image.path;
+    var userid = req.user._id;
+
+    var newImage = new Image();
+    newImage.img.data = fs.readFileSync(path);
+    newImage.img.contentType = req.files.mimetype;
+    newImage.owner = userid;
+
+    newImage.save(function(err, image){
+      if (err) throw err;
+      console.log("Saved image to mongodb.");
+      res.send(image._id);
+    });
+
+  },
+
   getProfile: function(req, res){
 
     Users.findById(req.user._id, function(err, user){
@@ -201,9 +208,6 @@ var adminController = {
         }
       });
     });
-  
-
-
   }
 
 

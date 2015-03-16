@@ -43,27 +43,53 @@ $(document).on('ready', function(){
     $editor.removeClass('hidden');
   });
 
+  // ================= IMAGE UPLOAD
+   
+  
 
-
-  // Ajax POST on save
-  $('#save').on('click', function(e){
+  
+  $('#imageuploader').on('submit', function(e){
     e.preventDefault();
-    var tags = $('#tags').val().split(',');
-    // tags = tags.split(',');
-    console.log("THE TAGS:", tags);
+    $(this).ajaxSubmit({
+      success: function(response){
+        console.log("Response:", response);
+        $('#imageuploader').addClass('hidden');
+        $('#successUrl').val('/images/' + response);
+        $('#successUrl').removeClass('hidden');
+      }
+    });
+  });
 
-    var data = {
-      posttitle : $('#post-title').val(),
-      posttext : $('#post-text').val(),
-      // postid : $(this).attr('data-id'),
-      tags : tags
-    };
-
-    $.post('/admin/posts/'+$(this).attr('data-id'),
-          data
-    );
+  $('#imageupload').on('click', function(){
+    $('#imageuploader')[0].reset();
+    $('#successUrl').val('').addClass('hidden');
+    $('#imageuploader').removeClass('hidden');
 
   });
+
+
+
+
+
+  // // Ajax POST on save
+  // $('#save').on('click', function(e){
+  //   e.preventDefault();
+  //   var tags = $('#tags').val().split(',');
+  //   // tags = tags.split(',');
+  //   console.log("THE TAGS:", tags);
+
+  //   var data = {
+  //     posttitle : $('#post-title').val(),
+  //     posttext : $('#post-text').val(),
+  //     // postid : $(this).attr('data-id'),
+  //     tags : tags
+  //   };
+
+  //   $.post('/admin/posts/'+$(this).attr('data-id'),
+  //         data
+  //   );
+
+  // });
 
 
 

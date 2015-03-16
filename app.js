@@ -6,6 +6,9 @@ var authController = require('./controllers/auth.js');
 var adminController = require('./controllers/admin.js');
 var _ = require('underscore');
 
+// Multer for file uploads
+var multer = require('multer');
+
 // Dotenv to hide the good stuff
 var dotenv = require('dotenv');
 dotenv.load();
@@ -40,6 +43,9 @@ app.use(express.static(__dirname + '/public'));
 app.use(express.static(__dirname + '/themes'));
 app.use(bodyParser.urlencoded({extended: false}));
 
+// Multer ==============================================
+app.use(multer({}));
+
 // Sessions ============================================
 
 app.use(cookieParser());
@@ -63,6 +69,7 @@ app.get('/', readController.getAllPosts);
 app.get('/users/:userid', readController.getByUser);
 app.get('/posts/:postid', readController.getSinglePost);
 app.get('/tags/:tag', readController.getByTag);
+app.get('/images/:imageid', readController.getImage);
 
 // Set up routes --- local registration/authentication
 app.get('/signup', authController.signupForm);
@@ -94,9 +101,6 @@ app.get('/logout', authController.logout);
 // Signed-in only routes
 app.use(passportConfig.isLoggedIn);
 
-// Try an if statement
-// app.use(paginate.middleware(10,20));
-
 
 // Set up routes --- admin backend
 app.get('/admin', adminController.getAllPosts);
@@ -108,6 +112,7 @@ app.post('/admin/posts/:postid', adminController.saveEditedPost);
 app.get('/admin/profile', adminController.getProfile);
 app.post('/admin/profile', adminController.saveProfile);
 app.post('/admin/changepw', adminController.changePW);
+app.post('/admin/upload', adminController.upload);
 // app.get('/admin/settings', adminController.editSettings);
 
 

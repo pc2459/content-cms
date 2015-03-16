@@ -12,34 +12,31 @@ Stage 2 - Figuring out Passport:
    ☐ Sign-in: Show error if no password is input
 Stage 2.1 - Scaffold out administration:
 Stage 2.2 - Update frontend:
- ☐ Editor Design
+ ☐ Create/Edit Editor Design
    ☐ Light grey blackground
    ☐ Typography update: Courier
    ☐ Improve the switch back/forth
+   ☐ Merge the templates
  ☐ Typography update...
- ☐ Navbar UI
  ☐ Reading UI
    ☐ Posts: edit links for logged-in users
-   ✔ Posts: timestamps @done (15-03-16 10:15)
 Stage 3 - Improve the backend:
- ☐ Deploy to Heroku
-   ✔ Set port to use env @done (15-03-16 10:46)
-   ✔ Set database to use modulus @done (15-03-16 10:46)
-   ☐ Deploy
- ✔ Post previews - shorten @done (15-03-13 14:29)
+ ☐ Image previews
+ ☐ Users page in setting
+   ☐ Delete users
+   ☐ Lock signups
  ☐ Settings: Themes
     ☐ Dynamically generate themes list in settings page
     ☐ Design templates in Pure, Bootstrap
  ☐ Editor: Tags typeahead
- ✔ Admin post lists: pagination @done (15-03-16 10:15)
  ☐ Avatars
    ☐ Default
    ☐ Facebook
 Stage 4 - UI improvement:
  ☐ Ajaxify Save/Publish
 Stage n - Wishlist:
- ☐ Posts: add images
 Wishlist:
+ ☐ Autosave to localstorage
  ☐ Tests - https://github.com/RefactorU/hackathon-live-feed/blob/master/server/app.js
  ☐ Authentication: Twitter
  ☐ Gulp build system
@@ -48,19 +45,33 @@ Wishlist:
  ☐ Mass-actions for editing
    ☐ Mass-delete
    ☐ Mass-publish/unpublish
- ☐ Autosave to localstorage
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
- ✔ If we're only ever going to have one blog, is this the most efficient/best practice way of storing settings? @done (15-03-13 09:32) @project(Stage 1.1 - Wire up the backend)
- ✔ "/admin/settings" - blog settings @done (15-03-13 12:32) @project(Stage 2.1 - Scaffold out administration)
- ✔ UI @done (15-03-13 12:32) @project(Stage 2.1 - Scaffold out administration)
- ✘ Basic info: blog name, blog subtitle @cancelled (15-03-13 12:31) @project(Stage 2.1 - Scaffold out administration)
- ✔ Themes @done (15-03-13 10:50) @project(Stage 2.1 - Scaffold out administration)
- ✘ Functionality @cancelled (15-03-13 12:32) @project(Stage 2.1 - Scaffold out administration)
+ ✔ Write routes to search db for :imageid and res.send it @done (15-03-16 14:02) @project(Stage 3 - Improve the backend)
+ ✔ Report the url as /images/:imageid @done (15-03-16 14:02) @project(Stage 3 - Improve the backend)
+ ✔ Posts: add images @done (15-03-16 14:02) @project(Stage 3 - Improve the backend)
+ ✔ Get multer  @done (15-03-16 14:02) @project(Stage 3 - Improve the backend)
+ ✔ Get images uploaded to the local filesystem @done (15-03-16 14:02) @project(Stage 3 - Improve the backend)
+ ✔ Get images saved to an image collection @done (15-03-16 14:02) @project(Stage 3 - Improve the backend)
+ ✔ Drop the image URL into the editor -- ajaxify???? @done (15-03-16 14:02) @project(Stage 3 - Improve the backend)
+ ✔ Add form to upload image in a modal @done (15-03-16 14:02) @project(Stage 3 - Improve the backend)
+ ✔ Deploy @done (15-03-16 11:02) @project(Stage 3 - Improve the backend)
+ ✔ Set port to use env @done (15-03-16 10:46) @project(Stage 3 - Improve the backend)
+ ✔ Set database to use modulus @done (15-03-16 10:46) @project(Stage 3 - Improve the backend)
+ ✔ Deploy to Heroku @done (15-03-16 10:46) @project(Stage 3 - Improve the backend)
+ ✔ Posts: timestamps @done (15-03-16 10:15) @project(Stage 2.2 - Update frontend)
+ ✔ Admin post lists: pagination @done (15-03-16 10:15) @project(Stage 3 - Improve the backend)
+ ✔ Post previews - shorten @done (15-03-13 14:29) @project(Stage 3 - Improve the backend)
  ✘ Update blog settings @cancelled (15-03-13 12:32) @project(Stage 2.1 - Scaffold out administration)
+ ✘ Functionality @cancelled (15-03-13 12:32) @project(Stage 2.1 - Scaffold out administration)
+ ✔ UI @done (15-03-13 12:32) @project(Stage 2.1 - Scaffold out administration)
+ ✔ "/admin/settings" - blog settings @done (15-03-13 12:32) @project(Stage 2.1 - Scaffold out administration)
+ ✘ Basic info: blog name, blog subtitle @cancelled (15-03-13 12:31) @project(Stage 2.1 - Scaffold out administration)
  ✔ Views: pagination @done (15-03-13 11:51) @project(Stage 3 - Improve the backend)
+ ✔ Themes @done (15-03-13 10:50) @project(Stage 2.1 - Scaffold out administration)
  ✘ Twitter @cancelled (15-03-13 09:39) @project(Stage 3 - Improve the backend)
+ ✔ If we're only ever going to have one blog, is this the most efficient/best practice way of storing settings? @done (15-03-13 09:32) @project(Stage 1.1 - Wire up the backend)
  ✔ Editor: Live post preview @done (15-03-12 17:33) @project(Stage 3 - Improve the backend)
  ✔ Update password... @done (15-03-12 17:23) @project(Stage 2.1 - Scaffold out administration)
  ✔ "/admin/profile" - profile settings @done (15-03-12 17:23) @project(Stage 2.1 - Scaffold out administration)

@@ -1,11 +1,12 @@
 var Posts = require('../models/post.js');
 var Users = require('../models/user.js');
+var Images = require('../models/image.js');
 var moment = require('moment');
 
 var readController = {
   getAllPosts: function(req, res) {
 
-    Posts.paginate({}, req.query.page, req.query.limit, 
+    Posts.paginate({published : true}, req.query.page, req.query.limit, 
       function(err, pageCount, posts, itemCount){
 
         if (err) return next(err);
@@ -26,28 +27,7 @@ var readController = {
             pageCount : pageCount,
             moment : moment });
         }  
-
-
       }, {sortBy : {createdAt : -1}});
-
-
-    // // Get all posts
-    // Posts.find({published : true}, null, {sort: {createdAt : -1}}, function(err, results){
-    //   if (err) console.log(err);
-
-    //   if(req.user){      
-    //     Users.findById(req.user._id, function(err, user){
-    //       // Send to template for rendering
-    //       res.render('../themes/'+ user.theme +'/index', {
-    //         loggedIn : req.user,
-    //         posts:results});
-    //     });
-    //   }
-    //   else {
-    //     res.render('../themes/default/index', { posts: results });
-    //   }
-    // });   
-
   },
 
   getByUser: function(req, res){
@@ -129,25 +109,15 @@ var readController = {
             pageCount : pageCount,
             moment:moment });
         }  
-
-
       }, {sortBy : {createdAt : -1}});
+  },
 
-
-    // Posts.find({ tags : tag}, function(err, posts){
-
-    //   if(req.user){
-    //     Users.findById(req.user._id, function(err, user){
-    //       res.render('../themes/'+ user.theme +'/index', {
-    //           loggedIn : req.user,
-    //           posts : posts});
-    //     });
-    //   }
-    //   res.render('../themes/default/index', {
-    //       posts : posts});
-    // });
+  getImage: function(req, res){
+    var imageid = req.params.imageid;
+    Images.findById(imageid, function(err, image){
+      res.send(image.img.data);
+    });
   }
-
 };
 
 module.exports = readController;
