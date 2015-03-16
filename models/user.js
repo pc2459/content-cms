@@ -3,7 +3,7 @@ var bcrypt = require('bcrypt');
 
 var userSchema = mongoose.Schema({
   // 0 = admin, 1 = user
-  permissions: {type: Number, default: 0},
+  permissions: {type: Number, default: 1},
   local: {
     username: String,
     password: String

@@ -29,11 +29,9 @@ var mongoose = require('mongoose');
 // mongoose.connect('mongodb://localhost/content');
 mongoose.connect('mongodb://test:test@proximus.modulusmongo.net:27017/iNe4depo');
 
-// Seed database to set up Blog and one user 
-require('./models/seeds/blogAndUserSeed.js');
-
-// Seed database with dummy posts owned by the one user
-require('./models/seeds/postsSeed.js');
+// Seed database to set up Blog, one admin user, and some
+// dummy posts 
+require('./models/seeds/seeds.js');
 
 var app = express();
 app.set('view engine', 'jade');
