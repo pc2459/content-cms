@@ -23,7 +23,8 @@ var flash = require('connect-flash');
 // Database connection
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/content');
+// mongoose.connect('mongodb://localhost/content');
+mongoose.connect('mongodb://test:test@proximus.modulusmongo.net:27017/iNe4depo')
 
 // Seed database to set up Blog and one user 
 require('./models/seeds/blogAndUserSeed.js');
