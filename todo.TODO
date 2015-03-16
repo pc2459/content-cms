@@ -20,14 +20,18 @@ Stage 2.2 - Update frontend:
  ☐ Navbar UI
  ☐ Reading UI
    ☐ Posts: edit links for logged-in users
-   ☐ Posts: timestamps
+   ✔ Posts: timestamps @done (15-03-16 10:15)
 Stage 3 - Improve the backend:
+ ☐ Deploy to Heroku
+   ✔ Set port to use env @done (15-03-16 10:46)
+   ✔ Set database to use modulus @done (15-03-16 10:46)
+   ☐ Deploy
  ✔ Post previews - shorten @done (15-03-13 14:29)
  ☐ Settings: Themes
     ☐ Dynamically generate themes list in settings page
     ☐ Design templates in Pure, Bootstrap
  ☐ Editor: Tags typeahead
- ☐ Admin post lists: pagination
+ ✔ Admin post lists: pagination @done (15-03-16 10:15)
  ☐ Avatars
    ☐ Default
    ☐ Facebook
