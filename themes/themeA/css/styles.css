@@ -111,7 +111,7 @@ body {
 
 /* Navigation */
 
-.nav {
+.navigation {
   font-family: 'Raleway', sans-serif;
   width: 100%;
   height: 50px;
@@ -124,7 +124,7 @@ body {
   border-bottom: 1px solid #DADADA;
 }
 
-.nav a {
+.navigation a {
   text-transform: uppercase;
   padding: 0 1rem;
 }

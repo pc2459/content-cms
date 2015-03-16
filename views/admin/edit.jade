@@ -17,15 +17,26 @@ block content
       a.fa.fa-image.u-pull-right#imageupload(href="#", data-target="#imageModal", data-toggle="modal")
 
     #editor
-      .post-body
-        form(id="edit-post", method="POST", action="/admin/posts/#{post._id}")
-          input.u-full-width(type="text", id="post-title", name="posttitle", value="#{post.title}")
-          textarea.u-full-width#post-text(name="posttext") !{post.body}
-          input(name="tags", id="tags", value=post.tags)
-          select(name="published")
-            option(value="true", selected=(post.published == true)) Published
-            option(value="false", selected=(post.published == false)) Draft
-          input(type="submit", value="Save")
+      if post
+        .post-body
+          form(id="edit-post", method="POST", action="/admin/posts/#{post._id}")
+            input.u-full-width(type="text", id="post-title", name="posttitle", value="#{post.title}")
+            textarea.u-full-width#post-text(name="posttext") !{post.body}
+            input(name="tags", id="tags", value=post.tags)
+            select(name="published")
+              option(value="true", selected=(post.published == true)) Published
+              option(value="false", selected=(post.published == false)) Draft
+            input(type="submit", value="Save")
+      else
+        .post-body
+          form(id="edit-post", method="POST", action="/admin/posts/create")
+            input.u-full-width(type="text", id="post-title", name="posttitle")
+            textarea.u-full-width#post-text(name="posttext") 
+            input(name="tags", id="tags")
+            select(name="published")
+              option(value="true") Published
+              option(value="false") Draft
+            input(type="submit", value="Save")
     #preview.hidden
       h3#preview-title
       #preview-body   
@@ -34,15 +45,35 @@ block content
     .modal-dialog
       .modal-content
         .modal-header
-          h4 Upload Image
-        .modal-body
-          form(id="imageuploader", enctype="multipart/form-data", method="POST", action="/admin/upload")
-            label(for="image") Image: 
-            input(type="file", id="imgpath", name="image")
-            input(type="submit", value="Upload")
-          input.hidden(type="text", id="successUrl")
+          h5.inline-title + image
+          .modal-body
+
+          ul.nav.nav-tabs(role="tablist")
+            li.active(role="presentation") 
+              a(href="#upload", role="tab", data-toggle="tab") Upload
+            li(role="presentation")
+              a(href="#uploads", role="tab", data-toggle="tab") Past uploads
+
+          .tab-content
+            .tab-pane.active#upload(role="tabpanel") 
+              form(id="imageuploader", enctype="multipart/form-data", method="POST", action="/admin/upload")
+                label(for="image") Image: 
+                input(type="file", id="imgpath", name="image")
+                input(type="submit", value="Upload")
+              input.hidden(type="text", id="successUrl")
+            .tab-pane#uploads(role="tabpanel")
+              if images
+                for image in images
+                  .row.image-row
+                    .three.columns 
+                      img.thumbnail(src="/images/"+image._id)
+                    .nine.columns
+                      input.u-full-width(type="text", class="imageurl", value="/images/"+image._id)
+              else 
+                p No images uploaded yet
+
         .modal-footer
-          button(type="button", class="close", id="modalclose", data-dismiss="modal") Cancel 
+          button(type="button", id="modalclose", class="close", data-dismiss="modal") Close  
 
 
 block page-scripts

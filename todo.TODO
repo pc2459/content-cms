@@ -21,7 +21,9 @@ Stage 2.2 - Update frontend:
  ☐ Reading UI
    ☐ Posts: edit links for logged-in users
 Stage 3 - Improve the backend:
- ☐ Image previews
+ ✔ Image previews @done (15-03-16 15:18)
+   ✔ Tabs in the modal between upload/uploads @done (15-03-16 15:18)
+   ✔ Image + url  @done (15-03-16 15:18)
  ☐ Users page in setting
    ☐ Delete users
    ☐ Lock signups

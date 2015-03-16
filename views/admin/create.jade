@@ -34,13 +34,13 @@ block content
       .modal-content
         .modal-header
           //- h4 Upload Image
+        .modal-body
+
           ul.nav.nav-tabs(role="tablist")
             li.active(role="presentation") 
               a(href="#upload", role="tab", data-toggle="tab") Upload
             li(role="presentation")
               a(href="#uploads", role="tab", data-toggle="tab") Past uploads
-        .modal-body
-
 
           .tab-content
             .tab-pane.active#upload(role="tabpanel") 
@@ -50,9 +50,18 @@ block content
                 input(type="submit", value="Upload")
               input.hidden(type="text", id="successUrl")
             .tab-pane#uploads(role="tabpanel")
-              p WONDERFUL LIST OF IMAGES HERE
+              if images
+                for image in images
+                  .row.image-row
+                    .three.columns 
+                      img.thumbnail(src="/images/"+image._id)
+                    .nine.columns
+                      input.u-full-width(type="text", class="imageurl", value="/images/"+image._id)
+              else 
+                p No images uploaded yet
+
         .modal-footer
-          button(type="button", id="modalclose", class="close", data-dismiss="modal") Cancel 
+          button(type="button", id="modalclose", class="close", data-dismiss="modal") Close 
 
 
 block page-scripts

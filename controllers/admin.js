@@ -7,9 +7,6 @@ var htmlmd = require('html-md');
 
 var adminController = {
   getAllPosts: function(req, res) {
-
-
-
     // Display all posts by the user
     Users.findById(req.user._id, function(err, user){
       Posts.paginate({owner: user._id}, req.query.page, req.query.limit, 
@@ -21,29 +18,16 @@ var adminController = {
             posts:posts,
             pageCount: pageCount
           });
-          
-          // if(req.user){      
-          //   Users.findById(req.user._id, function(err, user){
-          //     // Send to template for rendering
-          //     res.render('../themes/'+ user.theme +'/index', {
-          //       loggedIn : req.user,
-          //       posts:posts,
-          //       pageCount : pageCount});
-          //   });
-          // }
-          // else {
-          //   res.render('../themes/default/index', { 
-          //     posts: posts,
-          //     pageCount : pageCount });
-          // }  
-
-
         }, {sortBy : {createdAt : -1}});
     });
   },
 
   createPost: function(req, res){
-    res.render('admin/create');
+    Image.find({owner:req.user._id}, function(err, images){
+      res.render('admin/edit', {
+        images : images
+      });
+    });
   },
 
   saveNewPost: function(req, res){
@@ -72,8 +56,6 @@ var adminController = {
       newPost.save(function(){
         res.redirect('/admin');
       });
-      
-
     });
   },
 
