@@ -5,7 +5,10 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-a {
+a,
+a:hover,
+a:active,
+a:visited {
   text-decoration: none;
 }
 
@@ -61,8 +64,15 @@ html, body, .main {
 }
 
 .navigation a {
-  text-transform: uppercase;
   padding: 0 1rem;
+}
+
+.navigation a:hover {
+  text-decoration: none;
+}
+
+.navigation .nav-title {
+  color: #000;
 }
 
 .inline-title {
@@ -148,7 +158,13 @@ html, body, .main {
 }
 
 .tab-style-active {
-  border-bottom: 2px solid #111;
+  font-weight: 600;
+  /*border-bottom: 2px solid #111;*/
+}
+
+#imageupload{
+  padding-top: 8px;
+  color: #000;
 }
 
 #editor,

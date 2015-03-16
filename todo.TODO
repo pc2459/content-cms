@@ -16,17 +16,16 @@ Stage 2.2 - Update frontend:
    ☐ Light grey blackground
    ☐ Typography update: Courier
    ☐ Improve the switch back/forth
-   ☐ Merge the templates
+   ✔ Merge the templates @done (15-03-16 17:07)
  ☐ Typography update...
- ☐ Reading UI
-   ☐ Posts: edit links for logged-in users
+ ☐ Markdown cheatsheet
+ ✘ Reading UI @cancelled (15-03-16 17:04)
+   ✘ Posts: edit links for logged-in users @cancelled (15-03-16 17:04)
 Stage 3 - Improve the backend:
- ✔ Image previews @done (15-03-16 15:18)
-   ✔ Tabs in the modal between upload/uploads @done (15-03-16 15:18)
-   ✔ Image + url  @done (15-03-16 15:18)
- ☐ Users page in setting
-   ☐ Delete users
-   ☐ Lock signups
+ ✔ Users page in setting @done (15-03-16 17:04)
+   ✘ Delete users @cancelled (15-03-16 17:04)
+   ✔ Lock signups @done (15-03-16 17:04)
+ ☐ Use UPDATE instead of POST
  ☐ Settings: Themes
     ☐ Dynamically generate themes list in settings page
     ☐ Design templates in Pure, Bootstrap
@@ -35,7 +34,7 @@ Stage 3 - Improve the backend:
    ☐ Default
    ☐ Facebook
 Stage 4 - UI improvement:
- ☐ Ajaxify Save/Publish
+ ✘ Ajaxify Save/Publish @cancelled (15-03-16 17:25)
 Stage n - Wishlist:
 Wishlist:
  ☐ Autosave to localstorage
@@ -50,6 +49,9 @@ Wishlist:
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ Image previews @done (15-03-16 15:18) @project(Stage 3 - Improve the backend)
+ ✔ Tabs in the modal between upload/uploads @done (15-03-16 15:18) @project(Stage 3 - Improve the backend)
+ ✔ Image + url  @done (15-03-16 15:18) @project(Stage 3 - Improve the backend)
  ✔ Write routes to search db for :imageid and res.send it @done (15-03-16 14:02) @project(Stage 3 - Improve the backend)
  ✔ Report the url as /images/:imageid @done (15-03-16 14:02) @project(Stage 3 - Improve the backend)
  ✔ Posts: add images @done (15-03-16 14:02) @project(Stage 3 - Improve the backend)

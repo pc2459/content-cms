@@ -32,6 +32,12 @@ html, body, .main {
   display: none;
 }
 
+.inline-title {
+  display: inline;
+  margin: 0;
+  padding: 0 1rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -56,15 +62,17 @@ html, body, .main {
 }
 
 .navigation a {
-  text-transform: uppercase;
   padding: 0 1rem;
 }
 
-.inline-title {
-  display: inline;
-  margin: 0;
-  padding: 0 1rem;
+.navigation a:hover {
+  text-decoration: none;
 }
+
+.navigation .nav-title {
+  color: #000;
+}
+
 
 .main{
   padding-top: 7rem;

@@ -10,9 +10,9 @@ html(lang='en')
     title Content
 
   body
-    .navigation 
-      h5.inline-title Content
-      a(href="/") All posts
+    .navigation
+      a(href="/")
+        h5.inline-title.nav-title Content
       if !loggedIn
         a(href="/signin") Sign in
       else

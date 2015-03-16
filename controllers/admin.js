@@ -33,7 +33,6 @@ var adminController = {
 
   saveNewPost: function(req, res){
 
-    console.log("Tags:", req.body.tags);
     var title = req.body.posttitle;
     var markdownBody = req.body.posttext;
     var htmlBody = marked(markdownBody);
@@ -108,8 +107,6 @@ var adminController = {
   },
 
   upload: function(req, res){
-
-
     var mimetype = req.files.image.mimetype;
     var path = req.files.image.path;
     var userid = req.user._id;
