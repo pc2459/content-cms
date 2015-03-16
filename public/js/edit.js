@@ -1,9 +1,12 @@
 $(document).on('ready', function(){
 
+  var tags = ['aaaa', 'bbbb', 'cccc'];
+
   $('#tags').tagsInput({
     'height' : '40px',
     'width' : '100%',
     'defaultText' : ''
+    
   });
 
 

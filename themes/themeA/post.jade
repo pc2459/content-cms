@@ -7,5 +7,11 @@ block content
         h3 #{post.title}
         p.post-byline 
           | Written by 
-          a(href="/users/#{post.owner}") #{post.ownerName}
+          a(href="/users/#{post.owner}") #{post.ownerName} 
+          span.post-time.fa.fa-clock-o 
+          span  #{moment(post.editedAt).format("DD MMMM YYYY")}
+        p.post-tags
+          span
+            each tag in post.tags
+              a.button-small.pure-button.button-tag(href="/tags/#{tag}") #{tag}
         p.post-body !{post.body}

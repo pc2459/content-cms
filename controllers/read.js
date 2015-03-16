@@ -64,14 +64,16 @@ var readController = {
             // Send to template for rendering
             res.render('../themes/'+ user.theme +'/user', {
               loggedIn : req.user,
-              posts: posts});
+              posts: posts,
+              moment:moment});
           });
         }
         // If not logged in, render in the default theme
         else{
           res.render('../themes/default/user', { 
               posts : posts, 
-              user  : user});          
+              user  : user,
+              moment:moment});          
         }
       });
     });
@@ -89,13 +91,15 @@ var readController = {
           // Send to template for rendering
           res.render('../themes/'+ user.theme +'/post', {
             loggedIn : req.user,
-            post: post});
+            post: post,
+            moment : moment});
         });
       }
       // If not logged in, render in the default theme
       else{
         res.render('../themes/default/post', {
-          post : post
+          post : post,
+          moment : moment
         });         
       }
     });
@@ -115,13 +119,15 @@ var readController = {
             res.render('../themes/'+ user.theme +'/index', {
               loggedIn : req.user,
               posts:posts,
-              pageCount : pageCount});
+              pageCount : pageCount,
+              moment: moment});
           });
         }
         else {
           res.render('../themes/default/index', { 
             posts: posts,
-            pageCount : pageCount });
+            pageCount : pageCount,
+            moment:moment });
         }  
 
 

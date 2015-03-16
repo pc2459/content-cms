@@ -13,7 +13,7 @@ block content
               | Written by 
               a(href="/users/#{post.owner}") #{post.ownerName} 
             span.post-time.fa.fa-clock-o 
-            span  #{moment(post.editedAt).format("DD MMMM YYYY")}
+            span  #{moment(post.editedAt).format("DD MMMM YYYY")} 
             span.post-tags
               each tag in post.tags
                 a(class="button-tag button button-primary" href="/tags/#{tag}") #{tag}
