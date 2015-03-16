@@ -4,52 +4,69 @@ block content
 
   .container.main
 
-    form(id="form-profile", method="POST", action="/admin/profile")
-      .row
-        .six.columns
-          label(for="name") Name
-          input.u-full-width(type="text", name="name", value="#{user.name}")
-      .row
-        .six.columns
-          label(for="email") Email
-          input.u-full-width(type="text", name="email", value="#{user.email}")
-      .row
-        .six.columns
-          label(for="bio") Bio
-          textarea.u-full-width(name="bio") #{user.bio}
-      .row
-        .six.columns
-          label(for="theme") Reading Theme
-          select(name="theme")
-            option(value="default", selected=(user.theme === 'default')) Default
-            option(value="themeA",  selected=(user.theme === 'themeA')) ThemeA
-      .row
-        input(type="submit", value="Save")
+    .row.three.columns
+      ul.settings-nav
+        li
+          a.button(href="/admin/profile") Profile
+        if (user.permissions === 0)
+          li
+            a.button(href="/admin/users") Users
 
-    hr
 
-    form(id="form-password", method="POST", action="/admin/changepw")
-      if (error.length > 0)
-        p.error 
-          span.fa.fa-warning
-          span  #{error}
-      if (success.length > 0)
-        p.success
-          span.fa.fa-check 
-          span #{success}    
-      .row
-        .six.columns
-          label(for="oldpw") Old password
-          input.u-full-width(type="password", name="oldpw")
-      .row
-        .six.columns
-          label(for="newpw") New Password
-          input.u-full-width(type="password", name="newpw")
-      .row
-        .six.columns
-          label(for="newpw") Confirm New Password
-          input.u-full-width(type="password", name="newpw2")
-      .row
-        input(type="submit", value="Change Password")
+    .row.nine.columns
+      form(id="form-profile", method="POST", action="/admin/profile")
+        .row
+          .six.columns
+            label(for="name") Name
+            input.u-full-width(type="text", name="name", value="#{user.name}")
+        .row
+          .six.columns
+            label(for="email") Email
+            input.u-full-width(type="text", name="email", value="#{user.email}")
+        .row
+          .six.columns
+            label(for="bio") Bio
+            textarea.u-full-width(name="bio") #{user.bio}
+        .row
+          .six.columns
+            label(for="theme") Reading Theme
+            select(name="theme")
+              option(value="default", selected=(user.theme === 'default')) Default
+              option(value="themeA",  selected=(user.theme === 'themeA')) ThemeA
+        if (user.permissions === 0)
+          .row
+            .six.columns
+              label(for="registration") Registration Open?
+              select(name="registration")
+                option(value="true", selected=(blog.registrationOpen === true)) Yes
+                option(value="false",  selected=(blog.registrationOpen === false)) No
+        .row
+          input(type="submit", value="Save")
+
+      hr
+
+      form(id="form-password", method="POST", action="/admin/changepw")
+        if (error.length > 0)
+          p.error 
+            span.fa.fa-warning
+            span  #{error}
+        if (success.length > 0)
+          p.success
+            span.fa.fa-check 
+            span #{success}    
+        .row
+          .six.columns
+            label(for="oldpw") Old password
+            input.u-full-width(type="password", name="oldpw")
+        .row
+          .six.columns
+            label(for="newpw") New Password
+            input.u-full-width(type="password", name="newpw")
+        .row
+          .six.columns
+            label(for="newpw") Confirm New Password
+            input.u-full-width(type="password", name="newpw2")
+        .row
+          input(type="submit", value="Change Password")
         
 

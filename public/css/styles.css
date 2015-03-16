@@ -188,3 +188,9 @@ html, body, .main {
 .image-row{
   margin: 1rem 0;
 }
+
+/* SETTINGS */
+
+.settings-nav {
+  list-style-type: none;
+}

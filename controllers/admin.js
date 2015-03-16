@@ -1,7 +1,8 @@
 var fs = require('fs');
+var Blogs = require('../models/blog.js');
 var Posts = require('../models/post.js');
 var Users = require('../models/user.js');
-var Image = require('../models/image.js')
+var Image = require('../models/image.js');
 var marked = require('marked');
 var htmlmd = require('html-md');
 
@@ -129,11 +130,25 @@ var adminController = {
   getProfile: function(req, res){
 
     Users.findById(req.user._id, function(err, user){
-      res.render('admin/profile', { 
-        user:user,
-        error:req.flash('changePWError'),
-        success:req.flash('changePWMsg')
-      });
+
+      if(user.permissions===0){
+        Blogs.findOne({}, function(err, blog){
+          res.render('admin/profile', { 
+            user:user,
+            blog:blog,
+            error:req.flash('changePWError'),
+            success:req.flash('changePWMsg')
+          });        
+        });
+
+      }
+      else{
+        res.render('admin/profile', { 
+          user:user,
+          error:req.flash('changePWError'),
+          success:req.flash('changePWMsg')
+        });        
+      }
     });
   },
 
@@ -146,6 +161,10 @@ var adminController = {
       theme: req.body.theme
     };
 
+    var blogupdate = {
+      registrationOpen: req.body.registration
+    };
+
     var userid = req.user._id;
 
     Users.findByIdAndUpdate(userid, update, function(err, user){
@@ -153,7 +172,11 @@ var adminController = {
       // Update posts to reflect new name 
       Posts.update({owner : userid}, {$set : {ownerName : req.body.name}},
         {multi: true}, function(err, results){
-          res.redirect('/admin/profile');
+
+          //Update blog to reflect registration preferences
+          Blogs.findOneAndUpdate({}, blogupdate, function(err, results){
+            res.redirect('/admin/profile');
+          });
         });
     });
   },
@@ -190,6 +213,24 @@ var adminController = {
         }
       });
     });
+  },
+
+  editUsers: function(req, res){
+
+    if (req.user.permissions === 0){
+      Users.find({}, function(err, users){
+        res.render('admin/users', {
+          user : req.user,
+          users : users
+        });
+      });
+    }
+    else {
+      var message = "You do not have the permissions to view this page."
+      res.render('admin/users', {
+        message : message
+      });
+    }
   }
 
 

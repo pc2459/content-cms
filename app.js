@@ -27,7 +27,7 @@ var flash = require('connect-flash');
 var mongoose = require('mongoose');
 
 // mongoose.connect('mongodb://localhost/content');
-mongoose.connect('mongodb://test:test@proximus.modulusmongo.net:27017/iNe4depo')
+mongoose.connect('mongodb://test:test@proximus.modulusmongo.net:27017/iNe4depo');
 
 // Seed database to set up Blog and one user 
 require('./models/seeds/blogAndUserSeed.js');
@@ -113,7 +113,7 @@ app.get('/admin/profile', adminController.getProfile);
 app.post('/admin/profile', adminController.saveProfile);
 app.post('/admin/changepw', adminController.changePW);
 app.post('/admin/upload', adminController.upload);
-// app.get('/admin/settings', adminController.editSettings);
+app.get('/admin/users', adminController.editUsers);
 
 
 var server = app.listen(process.env.PORT || 9434, function() {

@@ -1,3 +1,4 @@
+var Blog = require('../models/blog.js');
 var User = require('../models/user.js');
 var LocalStrategy = require('passport-local').Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
@@ -92,9 +93,10 @@ var fbSignIn = new FacebookStrategy({
   // Pass it the API details
   clientID : process.env.FACEBOOK_APPID,
   clientSecret : process.env.FACEBOOK_SECRET,
-  callbackURL : 'http://localhost:9434/auth/facebook/callback'
+  callbackURL : 'http://localhost:9434/auth/facebook/callback',
+  passReqToCallback: true
 },
-  function(token, refreshToken, profile, next){
+  function(req, token, refreshToken, profile, next){
     // Find the user and return them if they exist in the DB
     User.findOne({'facebook.id' : profile.id}, function(err, user){
       if (err) return next(err);
@@ -103,24 +105,53 @@ var fbSignIn = new FacebookStrategy({
       if (user) {
         return next(null, user);
       }
+
       // Otherwise, create the user and store them
       else {
-        var newUser = new User();
+        //First check if registration is open
+        
+        Blog.findOne({}, function(err, blog){
 
-        newUser.facebook.id = profile.id;
-        newUser.facebook.token = token,
-        newUser.name = profile.name.givenName;
-        if(profile.emails){
-          newUser.email = profile.emails[0].value;
-        }
 
-        newUser.save(function(err){
-          if (err) throw err;
+          if(blog.registrationOpen){
+            var newUser = new User();
 
-          //return the saved new user
-          return next(null, newUser);
+            newUser.facebook.id = profile.id;
+            newUser.facebook.token = token,
+            newUser.name = profile.name.givenName;
+            if(profile.emails){
+              newUser.email = profile.emails[0].value;
+            }
+
+            newUser.save(function(err){
+              if (err) throw err;
+
+              //return the saved new user
+              return next(null, newUser);
+            });
+          }
+          else{
+            return next(null, false, req.flash('loginError', 'Registration is closed.'));
+          }
         });
-      }
+        
+        // var newUser = new User();
+
+        // newUser.facebook.id = profile.id;
+        // newUser.facebook.token = token,
+        // newUser.name = profile.name.givenName;
+        // if(profile.emails){
+        //   newUser.email = profile.emails[0].value;
+        // }
+
+        // newUser.save(function(err){
+        //   if (err) throw err;
+
+        //   //return the saved new user
+        //   return next(null, newUser);
+        // });
+
+      } //end else
     });
   }
 );

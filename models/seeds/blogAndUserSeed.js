@@ -7,8 +7,7 @@ Blog.find({}, function(err, results){
   if(results.length === 0){
   
     var newBlog = new Blog({
-      title: 'ContentCMS',
-      description: 'A simple CMS crafted in Node.js'
+      registrationOpen : true
     });
 
     newBlog.save();

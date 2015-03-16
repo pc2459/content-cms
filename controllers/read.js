@@ -31,32 +31,38 @@ var readController = {
   },
 
   getByUser: function(req, res){
+
     var userid = req.params.userid;
-    // Get all posts by userid
-    Posts.find({owner:userid}, function(err, posts){
+    Posts.paginate({owner: userid, published : true}, req.query.page, req.query.limit, 
+      function(err, pageCount, posts, itemCount){
 
-      // Get the user's info
-      Users.findById(userid, function(err, user){
+        if (err) return next(err);
 
-        // Render the page in the user's theme
-        if(req.user){
-          Users.findById(req.user._id, function(err, user){
-            // Send to template for rendering
-            res.render('../themes/'+ user.theme +'/user', {
-              loggedIn : req.user,
-              posts: posts,
-              moment:moment});
-          });
-        }
-        // If not logged in, render in the default theme
-        else{
-          res.render('../themes/default/user', { 
-              posts : posts, 
-              user  : user,
-              moment:moment});          
-        }
-      });
-    });
+        // Get the author's info
+        Users.findById(userid, function(err, user){
+
+          // Render the page in the logged-in user's theme
+          if(req.user){
+            Users.findById(req.user._id, function(err, user){
+              // Send to template for rendering
+              res.render('../themes/'+ user.theme +'/user', {
+                loggedIn : req.user,
+                user : user,
+                posts: posts,
+                moment:moment,
+                pageCount:pageCount});
+            });
+          }
+          // If not logged in, render in the default theme
+          else{
+            res.render('../themes/default/user', { 
+                posts : posts, 
+                user  : user,
+                moment:moment,
+                pageCount:pageCount});          
+          }
+        });
+    }, {sortBy : {createdAt : -1}});
   },
 
   getSinglePost: function(req, res){

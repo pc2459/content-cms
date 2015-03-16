@@ -1,10 +1,19 @@
 var Posts = require('../models/post.js');
 var Users = require('../models/user.js');
+var Blogs = require('../models/blog.js');
 
 var authController = {
   signupForm: function(req, res) {
-    // console.log(req.flash('signUpError'));
-    res.render('admin/signup', { error: req.flash('signUpError') });
+    Blogs.findOne({}, function(err, blog){
+      if (blog.registrationOpen) {
+        res.render('admin/signup', { error: req.flash('signUpError') });      
+      }
+      else{
+        console.log("Ended up in the else loop");
+        req.flash('loginError', 'Registration is closed.');
+        res.redirect('admin/signin');
+      }
+    });
   },
 
   getSignedIn: function(req, res){

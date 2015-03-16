@@ -1,0 +1,32 @@
+extends layout
+
+block content
+
+  .container.main
+
+    .row.three.columns
+      ul.settings-nav
+        li
+          a.button(href="/admin/profile") Profile
+        if (user.permissions === 0)
+          li
+            a.button(href="/admin/users") Users
+
+
+    .row.nine.columns
+
+      .row
+        .nine.columns
+          p Name
+        .three.columns
+          p Permissions
+
+      for user in users
+        .row(data-id="#{user._id}")
+          .nine.columns
+            p #{user.name}
+          .three.columns
+            p #{user.permissions}
+
+        
+
