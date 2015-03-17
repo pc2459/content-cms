@@ -73,7 +73,7 @@ h1 {
 h2 {
     font-size: 1.75em;
     line-height: 1.1;
-    margin: 2em 0 0.5em;
+ /*   margin: 2em 0 0.5em;*/
 }
 
 h1+img, h2+img {

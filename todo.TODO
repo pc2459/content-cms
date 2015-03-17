@@ -16,8 +16,12 @@ Stage 2.2 - Update frontend:
    ☐ Light grey blackground
    ☐ Typography update: Courier
    ☐ Improve the switch back/forth
+   ☐ Tags styling
    ✔ Merge the templates @done (15-03-16 17:07)
- ☐ Typography update...
+ ☐ Standardise reading Navbar
+ ☐ Re-invent administration Navbar
+   ☐ Use the logo
+ ✔ Typography update... @done (15-03-17 00:00)
  ☐ Markdown cheatsheet
  ✘ Reading UI @cancelled (15-03-16 17:04)
    ✘ Posts: edit links for logged-in users @cancelled (15-03-16 17:04)
@@ -28,7 +32,7 @@ Stage 3 - Improve the backend:
  ☐ Use UPDATE instead of POST
  ☐ Settings: Themes
     ☐ Dynamically generate themes list in settings page
-    ☐ Design templates in Pure, Bootstrap
+    ✔ Design templates in Pure, Bootstrap @done (15-03-17 00:01)
  ☐ Editor: Tags typeahead
  ☐ Avatars
    ☐ Default
