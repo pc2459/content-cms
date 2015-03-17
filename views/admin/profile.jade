@@ -33,6 +33,7 @@ block content
             select(name="theme")
               option(value="default", selected=(user.theme === 'default')) Default
               option(value="themeA",  selected=(user.theme === 'themeA')) ThemeA
+              option(value="typealicious",  selected=(user.theme === 'typealicious')) Typealicious
         if (user.permissions === 0)
           .row
             .six.columns

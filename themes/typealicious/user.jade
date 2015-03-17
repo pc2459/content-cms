@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  .container.main
+    if user
+      .div.user-profile
+        h1 #{user.name}
+        p.user-bio #{user.bio}
+    if posts
+      for post in posts
+        .div.post-item
+          h3 #{post.title}
+          p.post-preview !{post.body.substr(0, 255) + '...'}
+            a(href="/posts/#{post._id}")  Read more
+        hr

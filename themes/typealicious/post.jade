@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  .container.main
+    if post
+      .div.post-item
+        h1 #{post.title}
+        p.post-byline 
+          | Written by 
+          a(href="/users/#{post.owner}") #{post.ownerName} 
+        p.post-time 
+          span.post-time.fa.fa-clock-o   
+          span   #{moment(post.editedAt).format("DD MMMM YYYY")}
+        p.post-tags
+          each tag in post.tags
+            a(class="button-tag button button-primary" href="/tags/#{tag}") #{tag}
+        p.post-body !{post.body}
