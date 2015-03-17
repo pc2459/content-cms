@@ -22,21 +22,29 @@ block content
           form(id="edit-post", method="POST", action="/admin/posts/#{post._id}")
             input.u-full-width(type="text", id="post-title", name="posttitle", value="#{post.title}")
             textarea.u-full-width#post-text(name="posttext") !{post.body}
-            input(name="tags", id="tags", value=post.tags)
-            select(name="published")
+            .tags
+              .tag-icon
+                span.fa.fa-tag.tag-label 
+              .tagsinput-bar
+                input(name="tags", id="tags")
+            select.u-pull-right.published(name="published")
               option(value="true", selected=(post.published == true)) Published
               option(value="false", selected=(post.published == false)) Draft
-            input(type="submit", value="Save")
+            input.save(type="submit", value="Save")
       else
         .post-body
           form(id="edit-post", method="POST", action="/admin/posts/create")
             input.u-full-width(type="text", id="post-title", name="posttitle")
-            textarea.u-full-width#post-text(name="posttext") 
-            input(name="tags", id="tags")
-            select(name="published")
+            textarea.u-full-width#post-text(name="posttext")
+            .tags
+              .tag-icon
+                span.fa.fa-tag.tag-label 
+              .tagsinput-bar
+                input(name="tags", id="tags")
+            select.u-pull-right.published(name="published")
               option(value="true") Published
               option(value="false") Draft
-            input(type="submit", value="Save")
+            input.save(type="submit", value="Save")
     #preview.hidden
       h3#preview-title
       #preview-body   

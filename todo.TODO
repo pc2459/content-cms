@@ -9,9 +9,9 @@ Stage 2.1 - Scaffold out administration:
 Stage 2.2 - Update frontend:
  ☐ Create/Edit Editor Design
    ☐ Light grey blackground
-   ☐ Typography update: Courier
+   ✔ Typography update: Courier @done (15-03-17 11:34)
    ☐ Improve the switch back/forth
-   ☐ Tags styling
+   ✔ Tags styling @done (15-03-17 11:34)
  ☐ Themes
    ☐ Switch out default theme to Typealicious
    ☐ Create a good sans-serif theme

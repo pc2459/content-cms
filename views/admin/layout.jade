@@ -3,7 +3,7 @@ html(lang='en')
   head
     meta(charset="utf-8")
     block header-scripts
-    link(rel="stylesheet", type="text/css", href="//fonts.googleapis.com/css?family=Raleway:600,400,300")
+    link(rel="stylesheet", type="text/css", href="//fonts.googleapis.com/css?family=Raleway:600,400,300|Montserrat:400,700")
     link(rel="stylesheet", href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css")
 
     link(rel="stylesheet", type="text/css", href="/css/normalize.css")
@@ -12,18 +12,31 @@ html(lang='en')
     title Content
 
   body
-    .navigation.nav-admin 
+    .navigation.nav-admin.row 
       a(href="/")
-        h5.inline-title Content
-      a(href="/admin")
-        span.fa.fa-tasks  
-        span  Posts
-      a(href="/admin/profile")
-        span.fa.fa-user  
-        span  Profile
-      a(href="/logout") 
-        span.fa.fa-sign-out     
-        span  Log out
+        img.logo(src="/img/logo.png", alt="CONTENT CMS")
+      .u-pull-right.nav-options
+        a(href="/admin")
+          span.fa.fa-tasks  
+          span  Posts
+        a(href="/admin/profile")
+          span.fa.fa-user  
+          span  Profile
+        a(href="/logout") 
+          span.fa.fa-sign-out     
+
+    //- .navigation.row
+    //-   a(href="/")
+    //-     img.logo(src="/img/logo.png", alt="CONTENT CMS")
+    //-   .u-pull-right.nav-options
+    //-     if !loggedIn
+    //-       a(href="/signin")
+    //-         span.fa.fa-sign-in.fa-2x
+    //-     else
+    //-       a(href="/admin")  
+    //-         span.fa.fa-pencil-square-o.fa-2x
+    //-       a(href="/logout") 
+    //-         span.fa.fa-sign-out.fa-2x
       
     block content
 

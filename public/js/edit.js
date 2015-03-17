@@ -1,6 +1,5 @@
 $(document).on('ready', function(){
 
-  var tags = ['aaaa', 'bbbb', 'cccc'];
 
   $('#tags').tagsInput({
     'height' : '40px',
@@ -9,12 +8,17 @@ $(document).on('ready', function(){
     
   });
 
+  $('body, #editor, .post-body, #edit-post, :text#post-title, #post-text, div.tagsinput').addClass('muted-bg');
+
 
   var $editor = $('#editor');
   var $preview = $('#preview');
 
   // Switch to preview
   $('.preview-link').on('click', function(){
+
+
+    $('body, #editor, .post-body, #edit-post, :text, #post-text, div.tagsinput').removeClass('muted-bg');
 
     $('.edit-link').removeClass('tab-style-active');
     $('.preview-link').addClass('tab-style-active');
@@ -36,6 +40,8 @@ $(document).on('ready', function(){
 
   // Switch back to Edit mode
   $('.edit-link').on('click', function(){
+
+    $('body, #editor, .post-body, #edit-post, :text, #post-text, div.tagsinput').addClass('muted-bg');
 
     $('.edit-link').addClass('tab-style-active');
     $('.preview-link').removeClass('tab-style-active');
