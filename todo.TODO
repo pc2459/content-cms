@@ -1,15 +1,10 @@
 Stage 1 - Designing the frontend:
 Stage 1.1 - Wire up the backend:
-      ☐ Should tags be of tag schema or just a String?
-    ☐ Model Tags?
 Stage 1.2 - Fill up the backend:
 Stage 1.3 - Sanity check:
     ☐ BONUS: write mocha tests
  ☐ Start readme.MD
 Stage 2 - Figuring out Passport:
- ☐ Form validation
-   ☐ Sign-up: Show error if there is no password or email
-   ☐ Sign-in: Show error if no password is input
 Stage 2.1 - Scaffold out administration:
 Stage 2.2 - Update frontend:
  ☐ Create/Edit Editor Design
@@ -17,30 +12,29 @@ Stage 2.2 - Update frontend:
    ☐ Typography update: Courier
    ☐ Improve the switch back/forth
    ☐ Tags styling
-   ✔ Merge the templates @done (15-03-16 17:07)
+ ☐ Themes
+   ☐ Switch out default theme to Typealicious
+   ☐ Create a good sans-serif theme
  ☐ Standardise reading Navbar
  ☐ Re-invent administration Navbar
    ☐ Use the logo
- ✔ Typography update... @done (15-03-17 00:00)
  ☐ Markdown cheatsheet
- ✘ Reading UI @cancelled (15-03-16 17:04)
-   ✘ Posts: edit links for logged-in users @cancelled (15-03-16 17:04)
+ ☐ Front page
+   ☐ Cool image yeah
+   ☐ Big sign up 
 Stage 3 - Improve the backend:
- ✔ Users page in setting @done (15-03-16 17:04)
-   ✘ Delete users @cancelled (15-03-16 17:04)
-   ✔ Lock signups @done (15-03-16 17:04)
  ☐ Use UPDATE instead of POST
  ☐ Settings: Themes
     ☐ Dynamically generate themes list in settings page
-    ✔ Design templates in Pure, Bootstrap @done (15-03-17 00:01)
+Stage 4 - UI improvement:
+Wishlist:
+ ☐ Form validation
+   ☐ Sign-up: Show error if there is no password or email
+   ☐ Sign-in: Show error if no password is input
  ☐ Editor: Tags typeahead
  ☐ Avatars
    ☐ Default
    ☐ Facebook
-Stage 4 - UI improvement:
- ✘ Ajaxify Save/Publish @cancelled (15-03-16 17:25)
-Stage n - Wishlist:
-Wishlist:
  ☐ Autosave to localstorage
  ☐ Tests - https://github.com/RefactorU/hackathon-live-feed/blob/master/server/app.js
  ☐ Authentication: Twitter
@@ -53,8 +47,19 @@ Wishlist:
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
- ✔ Image previews @done (15-03-16 15:18) @project(Stage 3 - Improve the backend)
+ ✘ Should tags be of tag schema or just a String? @cancelled (15-03-17 00:17) @project(Stage 1.1 - Wire up the backend)
+ ✘ Model Tags? @cancelled (15-03-17 00:17) @project(Stage 1.1 - Wire up the backend)
+ ✔ Design templates in Pure, Bootstrap @done (15-03-17 00:01) @project(Stage 3 - Improve the backend)
+ ✔ Typography update... @done (15-03-17 00:00) @project(Stage 2.2 - Update frontend)
+ ✘ Ajaxify Save/Publish @cancelled (15-03-16 17:25) @project(Stage 4 - UI improvement)
+ ✔ Merge the templates @done (15-03-16 17:07) @project(Stage 2.2 - Update frontend)
+ ✘ Reading UI @cancelled (15-03-16 17:04) @project(Stage 2.2 - Update frontend)
+ ✘ Posts: edit links for logged-in users @cancelled (15-03-16 17:04) @project(Stage 2.2 - Update frontend)
+ ✘ Delete users @cancelled (15-03-16 17:04) @project(Stage 3 - Improve the backend)
+ ✔ Users page in setting @done (15-03-16 17:04) @project(Stage 3 - Improve the backend)
+ ✔ Lock signups @done (15-03-16 17:04) @project(Stage 3 - Improve the backend)
  ✔ Tabs in the modal between upload/uploads @done (15-03-16 15:18) @project(Stage 3 - Improve the backend)
+ ✔ Image previews @done (15-03-16 15:18) @project(Stage 3 - Improve the backend)
  ✔ Image + url  @done (15-03-16 15:18) @project(Stage 3 - Improve the backend)
  ✔ Write routes to search db for :imageid and res.send it @done (15-03-16 14:02) @project(Stage 3 - Improve the backend)
  ✔ Report the url as /images/:imageid @done (15-03-16 14:02) @project(Stage 3 - Improve the backend)
