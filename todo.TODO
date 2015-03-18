@@ -8,20 +8,20 @@ Stage 2 - Figuring out Passport:
 Stage 2.1 - Scaffold out administration:
 Stage 2.2 - Update frontend:
  ☐ Create/Edit Editor Design
-   ☐ Light grey blackground
+   ✔ Light grey blackground @done (15-03-17 15:26)
    ✔ Typography update: Courier @done (15-03-17 11:34)
    ☐ Improve the switch back/forth
    ✔ Tags styling @done (15-03-17 11:34)
  ☐ Themes
    ☐ Switch out default theme to Typealicious
    ☐ Create a good sans-serif theme
- ☐ Standardise reading Navbar
- ☐ Re-invent administration Navbar
-   ☐ Use the logo
+ ✔ Standardise reading Navbar @done (15-03-17 18:40)
+ ✔ Re-invent administration Navbar @done (15-03-17 18:40)
+   ✔ Use the logo @done (15-03-17 18:40)
  ☐ Markdown cheatsheet
- ☐ Front page
-   ☐ Cool image yeah
-   ☐ Big sign up 
+ ✔ Front page @done (15-03-17 18:40)
+   ✔ Cool image yeah @done (15-03-17 18:40)
+   ✔ Big sign up  @done (15-03-17 18:40)
 Stage 3 - Improve the backend:
  ☐ Use UPDATE instead of POST
  ☐ Settings: Themes

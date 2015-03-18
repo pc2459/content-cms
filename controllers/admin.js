@@ -24,6 +24,8 @@ var adminController = {
   },
 
   createPost: function(req, res){
+    // Feed any images uploaded by the user previously to the
+    // page for use
     Image.find({owner:req.user._id}, function(err, images){
       res.render('admin/edit', {
         images : images
@@ -42,6 +44,7 @@ var adminController = {
     }
     var published = req.body.published;
 
+    // Create the post and ascribe it to the user
     Users.findById(req.user._id, function(err, user){
 
       var newPost = new Posts({
@@ -78,7 +81,6 @@ var adminController = {
   },
 
   saveEditedPost: function(req, res){
-
     var postid = req.params.postid;
     var title = req.body.posttitle;
     var markdownBody = req.body.posttext;
@@ -100,8 +102,6 @@ var adminController = {
     };
 
     Posts.findByIdAndUpdate(postid, update, function(err, post){
-      console.log("Successfully updated post?");
-      // console.log(post);
       res.redirect('/admin');
     });
   },
@@ -118,16 +118,16 @@ var adminController = {
 
     newImage.save(function(err, image){
       if (err) throw err;
-      console.log("Saved image to mongodb.");
+      // console.log("Saved image to mongodb.");
       res.send(image._id);
     });
 
   },
 
   getProfile: function(req, res){
-
     Users.findById(req.user._id, function(err, user){
 
+      // Give admins special permission
       if(user.permissions===0){
         Blogs.findOne({}, function(err, blog){
           res.render('admin/profile', { 
@@ -150,7 +150,6 @@ var adminController = {
   },
 
   saveProfile: function(req, res){
-
     var update = {
       name : req.body.name,
       email : req.body.email,
@@ -179,7 +178,6 @@ var adminController = {
   },
 
   changePW: function(req, res){
-
     var oldpw = req.body.oldpw;
     // Twice-verified new password
     var newpw = req.body.newpw;
@@ -213,7 +211,6 @@ var adminController = {
   },
 
   editUsers: function(req, res){
-
     if (req.user.permissions === 0){
       Users.find({}, function(err, users){
         res.render('admin/users', {
@@ -223,7 +220,7 @@ var adminController = {
       });
     }
     else {
-      var message = "You do not have the permissions to view this page."
+      var message = "You do not have the permissions to view this page.";
       res.render('admin/users', {
         message : message
       });

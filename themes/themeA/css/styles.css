@@ -69,7 +69,7 @@ a {
 
 .button-tag {
 
-  margin: 0 0.5rem;
+  margin: 0 0.5rem 0.5rem 0;
 }
 
 /* TYPOGRAPHY */
@@ -179,71 +179,3 @@ body {
 .post-title {
   font-family: 'Raleway', sans-serif;
 }
-
-/* ADMIN */
-
-.admin {
-  background-color: #1C1C1C;
-  color: #DADADA;
-}
-
-.admin a {
-  color: #DADADA;
-}
-
-.post-meta {
-  overflow: hidden;
-}
-
-.post-tags,
-.draft,
-.delete {
-  margin: 0;
-}
-
-/* EDITOR */
-
-.view-toggle {
-  padding: 0.5rem 0;
-  margin-bottom: 0.5rem;
-}
-
-.tab-style {
-  margin-right: 2rem;
-  color: #111;
-}
-
-.tab-style-active {
-  border-bottom: 2px solid #111;
-}
-
-#editor,
-#preview,
-#edit-post {
-  width: 100%;
-  height: 100%;
-}
-
-.post-body {
-  height: 100%;
-}
-
-#post-title{
-  height: 5%;
-  font-size: 2rem;
-}
-
-#post-text{
- height: 70%;
- border: 0;
-}
-
-.post-options {
-  height: 5%;
-}
-
-#tags_tagsinput {
-  margin-bottom: 0.5rem;
-  height: 40px;
-}
-

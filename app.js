@@ -63,6 +63,7 @@ app.use(paginate.middleware(5,10));
 // Routes ==============================================
 
 // Set up routes --- reading
+app.get('/splash', readController.splash);
 app.get('/', readController.getAllPosts);
 app.get('/users/:userid', readController.getByUser);
 app.get('/posts/:postid', readController.getSinglePost);

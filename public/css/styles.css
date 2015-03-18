@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+a {
+  color: #D01729;
+}
+
 a,
 a:hover,
 a:active,
@@ -15,6 +19,10 @@ a:visited {
 
 html, body, .main { 
   height: 100vh;
+}
+
+.main{
+  padding-top: 70px;
 }
 
 .sr-only {
@@ -44,11 +52,13 @@ html, body, .main {
 .text-center {
   text-align: center;
 }
-/* Container override */
-/*.container {
-  max-width: 100%;
+
+.inline-title {
+  font-weight: 300;
+  display: inline;
+  margin: 0;
+  padding: 0 1rem;
 }
-*/
 
 /* READING Navigation */
 
@@ -68,7 +78,7 @@ html, body, .main {
   padding: 1rem 2rem;
   border-bottom: 1px solid #DADADA;
   font-family: 'Montserrat';
-  font-size: 0.8rem;
+  font-size: 12.8px;
 }
 
 .navigation a {
@@ -103,18 +113,18 @@ html, body, .main {
   color: #ddd;
 }
 
-.inline-title {
-  font-weight: 300;
-  display: inline;
-  margin: 0;
-  padding: 0 1rem;
+/* Desktop screens */
+@media (max-width: 450px) {
+  .nav-label {
+      display: none;
+  }
+
 }
 
 
 
-.main{
-  padding-top: 70px;
-}
+
+/* READING VIEWS */
 
 .post-title a {
   color: #000;
@@ -259,7 +269,6 @@ html, body, .main {
 
 div.tagsinput input {
   font-family: 'Montserrat', sans-serif;
-  /*font-size: 1em;*/
 }
 
 div.tagsinput span.tag {
@@ -272,7 +281,7 @@ div.tagsinput span.tag {
 }
 
 div.tagsinput span.tag a {
-  color: #A4151F;
+  color: #D01729;
 }
 
 /* IMAGE UPLOAD */
@@ -289,4 +298,68 @@ div.tagsinput span.tag a {
 
 .settings-nav {
   list-style-type: none;
+}
+
+
+/* SPLASH PAGE */
+
+#video-bg {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: auto;
+  min-width: 100%;
+  height: auto;
+  min-height: 100%;
+  z-index: -100;
+  background: transparent url(skylapse.jpg) no-repeat;
+  background-size: cover;
+}
+
+.splash {
+  font-family: 'Montserrat', 'Raleway', sans-serif;
+  font-size: 5em;
+  color: #fff;
+  text-align: center;
+
+  width: 500px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hook {
+  margin-bottom: 0;
+}
+
+.sign-up {
+  line-height: 1;
+
+}
+
+.sign-up-button  {
+
+  display: inline-block;
+  height: 50px;
+  padding: 0 30px;
+  color: #fff;
+  text-align: center;
+  font-size: 25px;
+  font-weight: 300;
+  line-height: 50px;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  border-radius: 4px;
+  border: 1px solid #fff;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.sign-up-button:hover {
+  color: #fff;
 }

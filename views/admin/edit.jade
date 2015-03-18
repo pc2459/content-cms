@@ -26,7 +26,7 @@ block content
               .tag-icon
                 span.fa.fa-tag.tag-label 
               .tagsinput-bar
-                input(name="tags", id="tags")
+                input(name="tags", id="tags",  value=post.tags)
             select.u-pull-right.published(name="published")
               option(value="true", selected=(post.published == true)) Published
               option(value="false", selected=(post.published == false)) Draft

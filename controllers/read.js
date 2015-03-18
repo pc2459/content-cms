@@ -4,6 +4,12 @@ var Images = require('../models/image.js');
 var moment = require('moment');
 
 var readController = {
+
+  splash: function(req, res){
+
+    res.render('splash');
+  },
+  
   getAllPosts: function(req, res) {
 
     Posts.paginate({published : true}, req.query.page, req.query.limit, 

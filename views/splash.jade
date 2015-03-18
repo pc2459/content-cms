@@ -1,0 +1,10 @@
+extends admin/layout2
+
+block content
+  video(autoplay, loop, muted, poster="/img/skylapse.jpg", id="video-bg")
+    source(src="/img/skylapse.mp4", type="video/mp4")
+
+  .splash
+    p.hook Just Content
+    p.sign-up
+      a.button.sign-up-button(href="/signin") Write

@@ -5,8 +5,14 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+
 a {
   text-decoration: none;
+  color: #D01729;
+}
+
+a:hover {
+  color: #E4172C;
 }
 
 html, body, .main { 
@@ -60,7 +66,7 @@ html, body, .main {
   left: 0;
   padding: 1rem 2rem;
   border-bottom: 1px solid #DADADA;
-  font-family: 'Montserrat';
+  font-family: 'Montserrat', sans-serif;
   font-size: 0.8rem;
 }
 
@@ -71,7 +77,6 @@ html, body, .main {
 .nav-options a {
   color: #444;
 }
-
 
 .main{
   padding-top: 70px;
@@ -84,18 +89,17 @@ html, body, .main {
   color: #000;
 }
 
-
 .user-profile {
   text-align: center;
   width: 500px;
-  margin: 0 auto;
+  margin: 0 auto 2.5em auto;
 }
 
 .button-tag {
   height: 24px;
   line-height: 24px;
   padding: 0 15px;
-  margin: 0 0.5rem 0 0;
+  margin: 0 0.5rem 0.5rem 0;
 }
 
 .both-centered {
@@ -118,69 +122,4 @@ html, body, .main {
   border: 1px solid #DA898E;
 }
 
-/* ADMIN */
 
-.admin {
-  background-color: #1C1C1C;
-  color: #DADADA;
-}
-
-.admin a {
-  color: #DADADA;
-}
-
-.post-meta {
-  overflow: hidden;
-}
-
-.draft,
-.delete {
-  margin: 0;
-}
-
-/* EDITOR */
-
-.view-toggle {
-  padding: 0.5rem 0;
-  margin-bottom: 0.5rem;
-}
-
-.tab-style {
-  margin-right: 2rem;
-  color: #111;
-
-}
-
-.tab-style-active {
-  border-bottom: 2px solid #111;
-}
-
-#editor,
-#preview,
-#edit-post {
-  width: 100%;
-  height: 100%;
-}
-
-.post-body {
-  height: 100%;
-}
-
-#post-title{
-  height: 5%;
-  font-size: 2rem;
-}
-
-#post-text{
- height: 70%;
- border: 0;
-}
-
-.post-options {
-  height: 5%;
-}
-
-#tags_tagsinput {
-  margin-bottom: 0.5rem;
-  height: 40px;
-}
