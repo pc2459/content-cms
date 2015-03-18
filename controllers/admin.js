@@ -46,7 +46,6 @@ var adminController = {
 
     // Create the post and ascribe it to the user
     Users.findById(req.user._id, function(err, user){
-
       var newPost = new Posts({
         title : title,
         body : htmlBody,
@@ -65,7 +64,7 @@ var adminController = {
   deletePost: function(req, res){
     var postid = req.params.postid;
     Posts.findByIdAndRemove(postid, function(err, result){
-      console.log("Deleted post");
+      // console.log("Deleted post");
       res.redirect('/admin');
     });
 
@@ -76,7 +75,12 @@ var adminController = {
 
     Posts.findById(postid, function(err, post){
       post.body = htmlmd(post.body);
-      res.render('admin/edit', {post:post});
+      // Feed the user any of their image uploads
+      Image.find({owner:req.user._id}, function(err, images){
+        res.render('admin/edit', {
+          post:post,
+          images:images});
+      });
     });
   },
 
@@ -90,8 +94,6 @@ var adminController = {
       tags = req.body.tags.split(',');
     }
     var published = req.body.published;
-    console.log("Published:", req.body.published);
-
     var update = {
       title : title,
       body : htmlBody,

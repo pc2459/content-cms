@@ -44,10 +44,6 @@ html, body, .main {
   display: none;
 }
 
-.thumbnail {
-  width: auto;
-  height: 100px;
-}
 
 .text-center {
   text-align: center;
@@ -166,8 +162,6 @@ html, body, .main {
 
 /* ADMIN */
 
-
-
 .post-meta {
   overflow: hidden;
 }
@@ -233,6 +227,7 @@ html, body, .main {
    height: calc(100% - 185px);
    border: 0;
    font-family: 'Courier New', Courier, serif;
+   resize: none;
 }
 
 
@@ -292,6 +287,11 @@ div.tagsinput span.tag a {
 
 .image-row{
   margin: 1rem 0;
+}
+
+.thumbnail {
+  max-width: 100px;
+  max-height: 100px;
 }
 
 /* SETTINGS */

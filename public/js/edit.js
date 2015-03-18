@@ -8,7 +8,7 @@ $(document).on('ready', function(){
     
   });
 
-  $('body, #editor, .post-body, #edit-post, :text#post-title, #post-text, div.tagsinput').addClass('muted-bg');
+  $('body, #editor, .post-body, #edit-post, :text#post-title, #post-text, div.tagsinput, .published').addClass('muted-bg');
 
 
   var $editor = $('#editor');
@@ -18,7 +18,7 @@ $(document).on('ready', function(){
   $('.preview-link').on('click', function(){
 
 
-    $('body, #editor, .post-body, #edit-post, :text, #post-text, div.tagsinput').removeClass('muted-bg');
+    $('body, #editor, .post-body, #edit-post, :text, #post-text, div.tagsinput,  .published').removeClass('muted-bg');
 
     $('.edit-link').removeClass('tab-style-active');
     $('.preview-link').addClass('tab-style-active');
@@ -41,7 +41,7 @@ $(document).on('ready', function(){
   // Switch back to Edit mode
   $('.edit-link').on('click', function(){
 
-    $('body, #editor, .post-body, #edit-post, :text, #post-text, div.tagsinput').addClass('muted-bg');
+    $('body, #editor, .post-body, #edit-post, :text, #post-text, div.tagsinput,  .published').addClass('muted-bg');
 
     $('.edit-link').addClass('tab-style-active');
     $('.preview-link').removeClass('tab-style-active');
