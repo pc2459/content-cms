@@ -7,19 +7,19 @@ Stage 1.3 - Sanity check:
 Stage 2 - Figuring out Passport:
 Stage 2.1 - Scaffold out administration:
 Stage 2.2 - Update frontend:
- ☐ Create/Edit Editor Design
+ ✔ Create/Edit Editor Design @done (15-03-17 21:00)
    ✔ Light grey blackground @done (15-03-17 15:26)
    ✔ Typography update: Courier @done (15-03-17 11:34)
-   ☐ Improve the switch back/forth
+   ✔ Improve the switch back/forth @done (15-03-17 21:00)
    ✔ Tags styling @done (15-03-17 11:34)
- ☐ Themes
-   ☐ Switch out default theme to Typealicious
-   ☐ Create a good sans-serif theme
+ ✔ Themes @done (15-03-17 20:46)
+   ✘ Switch out default theme to Typealicious @cancelled (15-03-17 20:46)
+   ✔ Create a good sans-serif theme @done (15-03-17 20:46)
  ✔ Standardise reading Navbar @done (15-03-17 18:40)
  ✔ Re-invent administration Navbar @done (15-03-17 18:40)
    ✔ Use the logo @done (15-03-17 18:40)
  ☐ Markdown cheatsheet
- ☐ Fix annoying bootstrap colours on the image upload panel
+ ✔ Fix annoying bootstrap colours on the image upload panel @done (15-03-17 20:28)
  ✔ Front page @done (15-03-17 18:40)
    ✔ Cool image yeah @done (15-03-17 18:40)
    ✔ Big sign up  @done (15-03-17 18:40)

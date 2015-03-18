@@ -89,6 +89,10 @@ html, body, .main {
   color: #000;
 }
 
+.post-body {
+  margin-bottom: 70px;
+}
+
 .user-profile {
   text-align: center;
   width: 500px;

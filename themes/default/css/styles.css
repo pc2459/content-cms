@@ -13,6 +13,10 @@ html, body, .main {
   height: 100%;
 }
 
+.main{
+  padding-top: 70px;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -41,10 +45,7 @@ html, body, .main {
 .text-center {
   text-align: center;
 }
-/* Container override */
-/*.container {
-  max-width: 100%;
-}*/
+
 
 /* Navigation */
 
@@ -75,15 +76,15 @@ html, body, .main {
   color: #444;
 }
 
-.main{
-  padding-top: 70px;
-}
-
+/* READING */
 
 .post-title a {
   color: #000;
 }
 
+.post-body {
+  margin-bottom: 70px;
+}
 
 .user-profile {
   text-align: center;

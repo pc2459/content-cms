@@ -99,33 +99,28 @@ html, body, .main {
   padding: 1rem 2rem;
   border-bottom: 1px solid #DADADA;
   background-color: #1C1C1C;
-  color: #DADADA;
-  font-size: 16px;
+  color: #FAFAFA;
+  font-size: 18px;
 }
 
 .nav-admin a {
   text-transform: uppercase;
   padding: 0 1rem;
-  color: #ddd;
+  color: #FAFAFA;
 }
 
 /* Desktop screens */
-@media (max-width: 450px) {
+@media (max-width: 480px) {
   .nav-label {
       display: none;
   }
-
 }
-
-
-
 
 /* READING VIEWS */
 
 .post-title a {
   color: #000;
 }
-
 
 .user-profile {
   text-align: center;
@@ -188,8 +183,9 @@ html, body, .main {
   font-weight: 600;
 }
 
-#imageupload{
+.editor-icon {
   padding-top: 8px;
+  padding-left: 8px;
   color: #000;
 }
 
@@ -198,8 +194,6 @@ html, body, .main {
   width: 100%;
   height: calc(100% - 40px);
 }
-
-
 
 .muted-bg {
   background-color: #FAFAFA !important; 
@@ -228,6 +222,46 @@ html, body, .main {
    border: 0;
    font-family: 'Courier New', Courier, serif;
    resize: none;
+}
+
+#post-text {
+  font-size: 1.4rem;
+}
+
+/* Desktop screens */
+@media (min-width: 34em) {
+  #post-text {
+    font-size: 1.6rem;
+  }
+}
+
+/* Ultra-large desktop screens */
+@media (min-width: 51em) {
+  #post-text {
+    font-size: 1.8rem;
+  }
+}
+
+#preview-body {
+  font-size: 1.6rem;
+}
+
+/* Desktop screens */
+@media (min-width: 34em) {
+  #preview-body {
+    font-size: 1.8rem;
+  }
+}
+
+/* Ultra-large desktop screens */
+@media (min-width: 51em) {
+  #preview-body {
+    font-size: 2.2rem;
+  }
+}
+
+#preview-body img {
+  max-width: 100%;
 }
 
 

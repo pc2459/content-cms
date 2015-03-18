@@ -11,6 +11,8 @@ block content
         .div.post-item
           a(href="/posts/#{post._id}")
             h3 #{post.title}
-          p.post-preview !{post.body.substr(0, post.body.indexOf('</p>')) + '...'}
-            a(href="/posts/#{post._id}")  Read more
+          p.post-preview !{post.body.substr(0, post.body.indexOf('</p>'))} 
+            a(href="/posts/#{post._id}")  
+              span.fa.fa-chevron-right
+              span.fa.fa-chevron-right
         hr
